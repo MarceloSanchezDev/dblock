@@ -1,22 +1,22 @@
 import "./nav.css";
-
+import { Link } from "react-router-dom";
 const Nav = () => {
   return (
     <nav className="home-navbar">
-      <a href="/" className="home-logo">
+      <Link to="/" className="home-logo">
         DBLOCK
-      </a>
+      </Link>
 
       <div className="home-navbar-links">
-        <a href="#solutions">Solutions</a>
-        <a href="#approach">Approach</a>
-        <a href="#benefits">Benefits</a>
-        <a href="#contact">Contact</a>
+        <Link to="/soluciones">Solutions</Link>
+        <Link to="/acerca-de-nosotros">Approach</Link>
+        <Link to="/beneficios">Benefits</Link>
+        <Link to="/contacto">Contact</Link>
       </div>
 
-      <a href="#contact" className="home-navbar-button">
+      <Link to="/contacto" className="home-navbar-button">
         Connect
-      </a>
+      </Link>
     </nav>
   );
 };
