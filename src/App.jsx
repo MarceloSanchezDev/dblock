@@ -1,7 +1,16 @@
 import "./App.css";
+import Footer from "./components/Footer/Footer";
+import Home from "./components/Home/Home";
+import Nav from "./components/Nav/Nav";
 
 function App() {
-  return <h1>D-BLOCK</h1>;
+  return (
+    <main className="home-page">
+      <Nav></Nav>
+      <Home />
+      <Footer></Footer>
+    </main>
+  );
 }
 
 export default App;
