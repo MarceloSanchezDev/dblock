@@ -1,3 +1,4 @@
+import SliceToTopComponent from "../../components/SliceToTopComponent/SliceToTopComponent";
 import "./Benefits.css";
 
 const metrics = [
@@ -102,6 +103,8 @@ const comparisonRows = [
 
 const Benefits = () => {
   return (
+    <SliceToTopComponent>
+
     <main className="benefits-page">
       <section className="benefits-hero">
         <div className="benefits-hero-content">
@@ -233,6 +236,7 @@ const Benefits = () => {
         </div>
       </section>
     </main>
+    </SliceToTopComponent>
   );
 };
 

@@ -1,3 +1,4 @@
+import SliceToTopComponent from "../../components/SliceToTopComponent/SliceToTopComponent";
 import "./Contact.css";
 
 const trustBadges = [
@@ -30,6 +31,7 @@ const budgetOptions = [
 
 const Contact = () => {
   return (
+    <SliceToTopComponent>
     <main className="contact-page">
       <div className="contact-container">
         <section className="contact-hero">
@@ -219,6 +221,7 @@ const Contact = () => {
         </section>
       </div>
     </main>
+    </SliceToTopComponent>
   );
 };
 

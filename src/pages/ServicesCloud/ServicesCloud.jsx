@@ -1,5 +1,6 @@
 import "./ServiciosCloud.css";
 import FirstSectionPage from "../../components/FirstSectionPage/FirstSectionPage";
+import SliceToTopComponent from "../../components/SliceToTopComponent/SliceToTopComponent";
 
 const architectureItems = [
   "HOSTING Y SERVIDORES",
@@ -24,7 +25,7 @@ const securityCards = [
 
 const ServiciosCloud = () => {
   return (
-    <>
+    <SliceToTopComponent>
 <FirstSectionPage
          btnPrimary={ { text: "Solicitar consulta", href: "/contacto" } }
          btnSecondary={ { text: "Ver soluciones cloud", href: "#solutions" } }
@@ -196,7 +197,7 @@ const ServiciosCloud = () => {
           </div>
         </div>
       </section>
-    </>
+    </SliceToTopComponent>
   );
 };
 

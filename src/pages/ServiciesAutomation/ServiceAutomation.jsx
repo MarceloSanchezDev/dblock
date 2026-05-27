@@ -1,4 +1,5 @@
 import FirstSectionPage from "../../components/FirstSectionPage/FirstSectionPage";
+import SliceToTopComponent from "../../components/SliceToTopComponent/SliceToTopComponent";
 import "./ServiciosAutomation.css";
 
 const capabilities = [
@@ -63,7 +64,8 @@ const logicItems = [
 
 const ServiciosAutomation = () => {
   return (
-    <main className="servicios-automation-page">
+    <SliceToTopComponent>
+      <main className="servicios-automation-page">
 <FirstSectionPage
      btnPrimary={ { text: "Ver soluciones", href: "#capabilities" } }
      btnSecondary={ { text: "Solicitar consulta", href: "/contacto" } }
@@ -248,6 +250,7 @@ const ServiciosAutomation = () => {
         </div>
       </section>
     </main>
+    </SliceToTopComponent>
   );
 };
 

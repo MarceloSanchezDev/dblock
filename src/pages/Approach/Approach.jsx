@@ -1,4 +1,5 @@
 import FirstSectionPage from "../../components/FirstSectionPage/FirstSectionPage";
+import SliceToTopComponent from "../../components/SliceToTopComponent/SliceToTopComponent";
 import "./Approach.css";
 
 const lifecycleSteps = [
@@ -70,6 +71,8 @@ const ecosystemItems = [
 
 const Approach = () => {
   return (
+    <SliceToTopComponent>
+
     <main className="approach-page">
     <FirstSectionPage
      btnPrimary={ { text: "Ver proceso", href: "#lifecycle" } }
@@ -174,6 +177,7 @@ const Approach = () => {
         </div>
       </section>
     </main>
+    </SliceToTopComponent>
   );
 };
 

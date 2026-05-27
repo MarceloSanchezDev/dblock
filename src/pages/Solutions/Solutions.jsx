@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Solutions.css";
 import FirstSectionPage from "../../components/FirstSectionPage/FirstSectionPage";
+import SliceToTopComponent from "../../components/SliceToTopComponent/SliceToTopComponent";
 
 const solutionCards = [
   {
@@ -160,7 +161,8 @@ const processSteps = [
 
 const Solutions = () => {
   return (
-    <main className="solutions-page">
+    <SliceToTopComponent>
+      <main className="solutions-page">
       <FirstSectionPage
      btnPrimary={ { text: "Ver soluciones", href: "#capabilities" } }
      btnSecondary={ { text: "Solicitar consulta", href: "/contacto" } }
@@ -410,6 +412,8 @@ const Solutions = () => {
         </div>
       </section>
     </main>
+    </SliceToTopComponent>
+    
   );
 };
 

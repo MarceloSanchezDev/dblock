@@ -1,4 +1,5 @@
 import FirstSectionPage from "../../components/FirstSectionPage/FirstSectionPage";
+import SliceToTopComponent from "../../components/SliceToTopComponent/SliceToTopComponent";
 import "./Home.css";
 
 const services = [
@@ -74,7 +75,7 @@ const benefits = [
 
 const Home = () => {
   return (
-    <>
+    <SliceToTopComponent>
     <FirstSectionPage
      btnPrimary={ { text: "Solicitar una consulta", href: "/contacto" } }
      btnSecondary={ { text: "Ver Servicios", href: "/soluciones" } }
@@ -253,7 +254,7 @@ const Home = () => {
           </a>
         </div>
       </section>
-    </>
+    </SliceToTopComponent>
   );
 };
 

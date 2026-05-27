@@ -1,4 +1,5 @@
 import FirstSectionPage from "../../components/FirstSectionPage/FirstSectionPage";
+import SliceToTopComponent from "../../components/SliceToTopComponent/SliceToTopComponent";
 import "./ServiciosWeb.css";
 
 const capabilities = [
@@ -62,7 +63,7 @@ const techStack = [
 
 const ServiciosWeb = () => {
   return (
-    <>
+    <SliceToTopComponent>
     <FirstSectionPage
          btnPrimary={ { text: "Ver soluciones", href: "#capabilities" } }
          btnSecondary={ { text: "Solicitar consulta", href: "/contacto" } }
@@ -209,7 +210,7 @@ const ServiciosWeb = () => {
           </div>
         </div>
       </section>
-    </>
+    </SliceToTopComponent>
   );
 };
 
