@@ -4,6 +4,7 @@ const Nav = () => {
   return (
     <nav className="home-navbar">
       <Link to="/" className="home-logo">
+      <img src="/logo.png" alt="Dblock Logo" className="img-logo"/>
         DBLOCK
       </Link>
 

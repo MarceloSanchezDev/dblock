@@ -26,10 +26,17 @@
 .home-logo {
   color: var(--home-text);
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: "Space Grotesk", sans-serif;
   font-size: 1.5rem;
   font-weight: 800;
   letter-spacing: -0.05em;
+}
+.img-logo {
+  width: 64px;
+  height: 64px;
 }
 .home-navbar-links {
   display: flex;
