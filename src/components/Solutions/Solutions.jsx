@@ -4,45 +4,50 @@ import "./Solutions.css";
 const solutionCards = [
   {
     icon: "terminal",
-    code: "CODE: WEB_ARCH",
-    title: "Web Development",
-    text: "High-performance React-driven architectures with SSR optimization and sub-second interaction latency.",
+    code: "DESARROLLO WEB",
+    title: "Páginas web y aplicaciones",
+    text: "Creamos sitios web, landing pages, ecommerce y aplicaciones web pensadas para empresas que necesitan presencia digital profesional.",
     type: "large",
     color: "blue",
     path: "/servicios-web",
   },
   {
     icon: "cloud",
-    code: "NODE: AWS_GCP_AZURE",
-    title: "Cloud Solutions",
+    code: "CLOUD E INFRAESTRUCTURA",
+    title: "Infraestructura digital",
+    text: "Configuramos entornos cloud, hosting, servidores y despliegues para que tus soluciones funcionen de forma estable y segura.",
     type: "wide",
     color: "green",
     path: "/servicios-cloud",
   },
   {
     icon: "security",
-    title: "Cybersecurity",
+    title: "Seguridad técnica",
+    text: "Aplicamos buenas prácticas para proteger formularios, accesos, datos y entornos digitales.",
     type: "small",
     color: "red",
     path: "/servicios-cloud",
   },
   {
     icon: "lan",
-    title: "Networking",
+    title: "Conectividad y sistemas",
+    text: "Ayudamos a ordenar herramientas, integraciones y procesos digitales dentro de tu empresa.",
     type: "small",
     color: "blue",
     path: "/servicios-cloud",
   },
   {
     icon: "query_stats",
-    title: "IT Consulting",
+    title: "Consultoría digital",
+    text: "Analizamos tu situación actual y definimos qué solución tecnológica conviene implementar primero.",
     type: "small",
     color: "white",
-    path: "/servicios-automation",
+    path: "/servicios-automatizacion",
   },
   {
     icon: "developer_mode",
-    title: "Software Dev",
+    title: "Software a medida",
+    text: "Desarrollamos funcionalidades y sistemas adaptados a las necesidades reales de tu negocio.",
     type: "small",
     color: "green",
     path: "/servicios-web",
@@ -51,24 +56,24 @@ const solutionCards = [
 
 const featuredSolutions = [
   {
-    title: "Cloud Architecture & Migration",
-    label: "Critical Infrastructure",
-    role: "Primary Platform Lead",
-    benefits: "99.99% Uptime SLA",
-    text: "We solve legacy bottleneck issues by refactoring monolithic environments into distributed, serverless cloud clusters that scale dynamically with demand.",
-    useCase: "Use Case: Global Fintech Platform",
+    title: "Desarrollo web para empresas",
+    label: "Presencia digital",
+    role: "Sitios web y aplicaciones",
+    benefits: "Más claridad y más consultas",
+    text: "Creamos páginas web profesionales, landing pages, ecommerce y aplicaciones web con estructura clara, diseño responsive y contenido orientado a conversión.",
+    useCase: "Ideal para: empresas que necesitan mejorar su presencia online",
     color: "blue",
     image:
       "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1400&q=80",
-    path: "/servicios-cloud",
+    path: "/servicios-web",
   },
   {
-    title: "Enterprise Security Systems",
-    label: "Active Defense",
-    role: "Guardian Sentinel",
-    benefits: "Zero-Trust Protocol",
-    text: "Deploying sophisticated EDR/XDR monitoring systems and military-grade encryption to secure industrial assets against persistent advanced threats.",
-    useCase: "Use Case: Energy Grid Security",
+    title: "Infraestructura, cloud y automatización",
+    label: "Operación digital",
+    role: "Cloud, servidores y procesos",
+    benefits: "Mayor estabilidad y eficiencia",
+    text: "Ayudamos a empresas a ordenar su infraestructura, automatizar tareas repetitivas y mejorar el funcionamiento de sus sistemas digitales.",
+    useCase: "Ideal para: empresas que quieren escalar o mejorar procesos",
     color: "green",
     image:
       "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1400&q=80",
@@ -79,76 +84,76 @@ const featuredSolutions = [
 const problemRows = [
   {
     problemIcon: "report",
-    problem: "Legacy System Latency & Downtime",
-    problemStatus: "[ CRITICAL ]",
+    problem: "Sitio web lento, desactualizado o poco claro",
+    problemStatus: "PROBLEMA",
     solutionIcon: "rocket_launch",
-    solution: "Performance Optimization & Edge Delivery",
-    solutionStatus: "[ RESOLVED ]",
+    solution: "Web optimizada, responsive y orientada a consultas",
+    solutionStatus: "SOLUCIÓN",
     type: "critical",
     solutionColor: "green",
   },
   {
     problemIcon: "history",
-    problem: "Manual Repetitive Workflows",
-    problemStatus: "[ INEFFICIENCY ]",
+    problem: "Tareas manuales y procesos repetitivos",
+    problemStatus: "INEFICIENCIA",
     solutionIcon: "auto_mode",
-    solution: "Full-Stack Process Automation",
-    solutionStatus: "[ OPTIMIZED ]",
+    solution: "Automatización de procesos y sistemas a medida",
+    solutionStatus: "OPTIMIZADO",
     type: "neutral",
     solutionColor: "blue",
   },
   {
     problemIcon: "security",
-    problem: "Persistent Security Vulnerabilities",
-    problemStatus: "[ ALERT ]",
+    problem: "Infraestructura inestable o difícil de mantener",
+    problemStatus: "RIESGO",
     solutionIcon: "verified_user",
-    solution: "Zero-Trust Hardened Monitoring",
-    solutionStatus: "[ SECURED ]",
+    solution: "Entornos digitales más seguros, ordenados y escalables",
+    solutionStatus: "MEJORADO",
     type: "critical",
     solutionColor: "green",
   },
 ];
 
 const techStack = [
-  "REACT.JS",
+  "REACT",
   "NODE.JS",
-  "TYPESCRIPT",
-  "AWS/AZURE",
-  "KUBERNETES",
-  "TERRAFORM",
+  "JAVASCRIPT",
+  "SEO",
+  "CLOUD",
   "DOCKER",
+  "AUTOMATIZACIÓN",
 ];
 
 const processSteps = [
   {
     number: "01",
-    title: "Discovery",
-    text: "Requirement analysis & system auditing.",
+    title: "Diagnóstico",
+    text: "Analizamos tu empresa, tus objetivos y los problemas digitales actuales.",
   },
   {
     number: "02",
-    title: "Strategy",
-    text: "Logic mapping & ROI forecasting.",
+    title: "Estrategia",
+    text: "Definimos qué solución conviene: web, SEO, cloud, automatización o aplicación.",
   },
   {
     number: "03",
-    title: "Architecture",
-    text: "Low-level design & stack selection.",
+    title: "Arquitectura",
+    text: "Organizamos estructura, tecnología, contenido y flujo de conversión.",
   },
   {
     number: "04",
-    title: "Development",
-    text: "Agile sprint-based implementation.",
+    title: "Desarrollo",
+    text: "Creamos la solución con buenas prácticas y diseño responsive.",
   },
   {
     number: "05",
-    title: "Deployment",
-    text: "CI/CD automation & release.",
+    title: "Publicación",
+    text: "Preparamos el despliegue y dejamos el proyecto funcionando online.",
   },
   {
     number: "06",
-    title: "Optimization",
-    text: "Monitoring & continuous tuning.",
+    title: "Optimización",
+    text: "Medimos, corregimos y mejoramos para conseguir mejores resultados.",
   },
 ];
 
@@ -160,27 +165,32 @@ const Solutions = () => {
 
         <div className="solutions-hero-content">
           <span className="solutions-eyebrow">
-            Industrial-Grade Infrastructure
+            Soluciones digitales para empresas
           </span>
 
           <h1>
-            Architecting the Next <br />
-            Digital Frontier
+            Desarrollo web, cloud y automatización para empresas
           </h1>
 
           <p>
-            End-to-end technological ecosystems designed for high-performance
-            scale, absolute security, and industrial-grade reliability. We build
-            the systems that drive global enterprise.
+            En Dblock ayudamos a empresas a mejorar su presencia online,
+            ordenar sus procesos digitales y construir soluciones tecnológicas
+            estables, escalables y orientadas a generar más consultas.
           </p>
 
           <div className="solutions-hero-buttons">
-            <a href="#capabilities" className="solutions-btn solutions-btn-primary">
-              Explore Solutions
+            <a
+              href="#capabilities"
+              className="solutions-btn solutions-btn-primary"
+            >
+              Ver soluciones
             </a>
 
-            <Link to="/contact" className="solutions-btn solutions-btn-secondary">
-              Start Consultation
+            <Link
+              to="/contacto"
+              className="solutions-btn solutions-btn-secondary"
+            >
+              Solicitar consulta
             </Link>
           </div>
         </div>
@@ -188,11 +198,14 @@ const Solutions = () => {
         <div className="solutions-scan-line"></div>
       </section>
 
-      <section id="capabilities" className="solutions-section solutions-overview">
+      <section
+        id="capabilities"
+        className="solutions-section solutions-overview"
+      >
         <div className="solutions-container">
           <div className="solutions-section-header">
-            <h2>Capabilities Registry</h2>
-            <p>[ SYSTEM_CAPABILITIES_V2.0 ]</p>
+            <h2>Soluciones principales</h2>
+            <p>Servicios digitales pensados para empresas</p>
           </div>
 
           <div className="solutions-bento">
@@ -203,7 +216,9 @@ const Solutions = () => {
                 key={card.title}
               >
                 <div className="solutions-card-top">
-                  <span className="material-symbols-outlined">{card.icon}</span>
+                  <span className="material-symbols-outlined">
+                    {card.icon}
+                  </span>
 
                   {card.code && <strong>{card.code}</strong>}
                 </div>
@@ -223,7 +238,7 @@ const Solutions = () => {
             ))}
 
             <Link
-              to="/servicios-automation"
+              to="/servicios-automatizacion"
               className="solutions-card solutions-card-automation"
             >
               <div>
@@ -233,7 +248,11 @@ const Solutions = () => {
                   <span></span>
                 </div>
 
-                <h3>Automation & Transformation</h3>
+                <h3>Automatización y transformación digital</h3>
+                <p>
+                  Digitalizamos procesos para que tu empresa trabaje de forma
+                  más ordenada, rápida y eficiente.
+                </p>
               </div>
 
               <span className="material-symbols-outlined">
@@ -247,11 +266,12 @@ const Solutions = () => {
       <section className="solutions-section solutions-featured">
         <div className="solutions-container">
           <div className="solutions-featured-header">
-            <h2>Deep Core Solutions</h2>
+            <h2>Soluciones destacadas</h2>
 
             <p>
-              Detailed architectural breakdown of our primary deployment
-              strategies for global scale operations.
+              Diseñamos soluciones digitales adaptadas al momento actual de tu
+              empresa, priorizando claridad, rendimiento, seguridad y
+              conversión.
             </p>
           </div>
 
@@ -275,12 +295,12 @@ const Solutions = () => {
 
                   <div className="solutions-featured-meta">
                     <div>
-                      <span>Role</span>
+                      <span>Servicio</span>
                       <p>{item.role}</p>
                     </div>
 
                     <div>
-                      <span>Benefits</span>
+                      <span>Beneficio</span>
                       <p>{item.benefits}</p>
                     </div>
                   </div>
@@ -292,7 +312,7 @@ const Solutions = () => {
                       {item.useCase}
                     </span>
 
-                    <Link to={item.path}>View Details</Link>
+                    <Link to={item.path}>Ver detalles</Link>
                   </div>
                 </div>
               </article>
@@ -307,8 +327,8 @@ const Solutions = () => {
             <div className="solutions-mapping-glow"></div>
 
             <div className="solutions-mapping-header">
-              <h2>Technical Mapping</h2>
-              <p>Incident Response & Remediation Flow</p>
+              <h2>Problemas que resolvemos</h2>
+              <p>De una situación desordenada a una solución digital clara</p>
             </div>
 
             <div className="solutions-problem-list">
@@ -328,7 +348,9 @@ const Solutions = () => {
                   </div>
 
                   <div className="solutions-problem-arrow">
-                    <span className="material-symbols-outlined">double_arrow</span>
+                    <span className="material-symbols-outlined">
+                      double_arrow
+                    </span>
                   </div>
 
                   <div
@@ -352,7 +374,7 @@ const Solutions = () => {
 
       <section className="solutions-tech-stack">
         <div className="solutions-container">
-          <p>INTEGRATED_TECHNOLOGIES_ARRAY</p>
+          <p>Tecnologías y áreas de trabajo</p>
         </div>
 
         <div className="solutions-stack-row">
@@ -369,17 +391,17 @@ const Solutions = () => {
         <div className="solutions-container solutions-process-grid">
           <div className="solutions-process-content">
             <h2>
-              From Logic <br />
-              To Deployment
+              De la idea a una solución digital funcionando
             </h2>
 
             <p>
-              Our rigorous engineering process ensures that every solution is
-              battle-tested and ready for production-level traffic.
+              Trabajamos con un proceso claro para entender el problema,
+              definir la solución, desarrollarla, publicarla y mejorarla con el
+              tiempo.
             </p>
 
-            <Link to="/approach">
-              Learn our Approach
+            <Link to="/acerca-de-nosotros">
+              Conocer nuestra metodología
               <span className="material-symbols-outlined">arrow_forward</span>
             </Link>
           </div>
@@ -401,17 +423,17 @@ const Solutions = () => {
 
         <div className="solutions-final-content">
           <h2>
-            Ready to build your <br />
-            next digital system?
+            ¿Querés construir o mejorar una solución digital?
           </h2>
 
           <p>
-            Connect with our engineering team today to architect a custom
-            high-performance solution for your enterprise needs.
+            Contanos qué necesita tu empresa y te ayudamos a definir el camino
+            más conveniente: página web, SEO, infraestructura, automatización o
+            aplicación a medida.
           </p>
 
-          <Link to="/contact" className="solutions-final-button">
-            Start Your Project
+          <Link to="/contacto" className="solutions-final-button">
+            Solicitar una consulta
           </Link>
         </div>
       </section>

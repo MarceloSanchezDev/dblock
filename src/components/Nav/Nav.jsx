@@ -1,22 +1,51 @@
 import "./nav.css";
 import { Link } from "react-router-dom";
+
+const navLinks = [
+  {
+    path: "/soluciones",
+    label: "Soluciones",
+  },
+  {
+    path: "/servicios-web",
+    label: "Servicios web",
+  },
+  {
+    path: "/servicios-cloud",
+    label: "Cloud",
+  },
+  {
+    path: "/servicios-automatizacion",
+    label: "Automatización",
+  },
+  {
+    path: "/acerca-de-nosotros",
+    label: "Nosotros",
+  },
+  {
+    path: "/beneficios",
+    label: "Beneficios",
+  },
+];
+
 const Nav = () => {
   return (
-    <nav className="home-navbar">
-      <Link to="/" className="home-logo">
-      <img src="/logo.png" alt="Dblock Logo" className="img-logo"/>
-        DBLOCK
+    <nav className="home-navbar" aria-label="Navegación principal">
+      <Link to="/" className="home-logo" aria-label="Ir al inicio de Dblock">
+        <img src="/logo.png" alt="Logo de Dblock" className="img-logo" />
+        <span>DBLOCK</span>
       </Link>
 
       <div className="home-navbar-links">
-        <Link to="/soluciones">Solutions</Link>
-        <Link to="/acerca-de-nosotros">Approach</Link>
-        <Link to="/beneficios">Benefits</Link>
-        <Link to="/contacto">Contact</Link>
+        {navLinks.map((link) => (
+          <Link key={link.path} to={link.path}>
+            {link.label}
+          </Link>
+        ))}
       </div>
 
       <Link to="/contacto" className="home-navbar-button">
-        Connect
+        Solicitar consulta
       </Link>
     </nav>
   );

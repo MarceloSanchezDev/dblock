@@ -2,18 +2,18 @@ import "./Benefits.css";
 
 const metrics = [
   {
-    value: "99.99%",
-    label: "Guaranteed Uptime",
+    value: "+ consultas",
+    label: "Sitios pensados para convertir visitantes en oportunidades comerciales",
     color: "green",
   },
   {
-    value: "3x",
-    label: "Deployment Speed",
+    value: "SEO",
+    label: "Estructura preparada para mejorar visibilidad en Google",
     color: "blue",
   },
   {
-    value: "70%",
-    label: "Cost Efficiency Gain",
+    value: "Escalable",
+    label: "Soluciones listas para crecer con tu empresa",
     color: "white",
   },
 ];
@@ -21,52 +21,52 @@ const metrics = [
 const benefits = [
   {
     icon: "shield_lock",
-    title: "Security",
-    text: "Military-grade encryption with automated threat detection and real-time response protocols embedded at the kernel level.",
+    title: "Seguridad",
+    text: "Aplicamos buenas prácticas para proteger formularios, datos, accesos, infraestructura y entornos digitales.",
     color: "blue",
     large: true,
   },
   {
     icon: "dynamic_feed",
-    title: "Scalability",
-    text: "Instant vertical and horizontal auto-scaling nodes.",
+    title: "Escalabilidad",
+    text: "Creamos soluciones preparadas para crecer en contenido, usuarios, servicios y funcionalidades.",
     color: "green",
   },
   {
     icon: "robot_2",
-    title: "Automation",
-    text: "CI/CD pipelines integrated natively into the core.",
+    title: "Automatización",
+    text: "Ayudamos a reducir tareas repetitivas con sistemas, integraciones y flujos digitales más eficientes.",
     color: "blue",
   },
   {
     icon: "bolt",
-    title: "Performance",
-    text: "Low-latency data processing via optimized edge networks.",
+    title: "Rendimiento",
+    text: "Optimizamos velocidad, estructura y experiencia para que tu sitio o aplicación funcione mejor.",
     color: "green",
   },
   {
     icon: "engineering",
-    title: "Technical Support",
-    text: "Direct access to tier-3 systems engineers 24/7/365. No queues, only solutions for mission-critical operations.",
+    title: "Soporte técnico",
+    text: "Acompañamos a tu empresa con mantenimiento, mejoras, correcciones y asistencia técnica.",
     color: "blue",
     large: true,
   },
   {
     icon: "account_balance_wallet",
-    title: "Cost Efficiency",
-    text: "Algorithmic resource allocation to minimize waste.",
+    title: "Inversión eficiente",
+    text: "Priorizamos soluciones útiles para tu negocio, evitando desarrollos innecesarios o difíciles de mantener.",
     color: "green",
   },
   {
     icon: "speed",
-    title: "Efficiency",
-    text: "Optimized resource footprint for maximum ROI.",
+    title: "Mejor experiencia",
+    text: "Diseñamos interfaces claras, responsive y fáciles de usar para clientes y equipos internos.",
     color: "blue",
   },
   {
     icon: "update",
-    title: "Future-Proof",
-    text: "Modular architecture designed to evolve with quantum-ready cryptographic standards and upcoming tech stacks.",
+    title: "Preparado para el futuro",
+    text: "Trabajamos con estructuras modulares que permiten mejorar, actualizar y ampliar el proyecto con el tiempo.",
     color: "green",
     large: true,
   },
@@ -74,29 +74,29 @@ const benefits = [
 
 const comparisonRows = [
   {
-    metric: "Uptime",
-    legacy: "99.5% Average",
-    dblock: "99.99% Guaranteed",
+    metric: "Presencia digital",
+    legacy: "Sitio básico sin estrategia",
+    dblock: "Web clara, profesional y orientada a consultas",
   },
   {
-    metric: "Deployment Latency",
-    legacy: "12 - 45 Minutes",
-    dblock: "< 180 Seconds",
+    metric: "SEO",
+    legacy: "Contenido sin estructura",
+    dblock: "Arquitectura, textos y páginas pensadas para Google",
   },
   {
-    metric: "Security Compliance",
-    legacy: "Manual Audits",
-    dblock: "Real-time AI Auditing",
+    metric: "Conversión",
+    legacy: "Sin llamados a la acción claros",
+    dblock: "CTAs, formularios y mensajes comerciales definidos",
   },
   {
-    metric: "Data Redundancy",
-    legacy: "2x Local",
-    dblock: "5x Global Sharding",
+    metric: "Mantenimiento",
+    legacy: "Cambios difíciles o desordenados",
+    dblock: "Código y estructura preparados para mejorar con el tiempo",
   },
   {
-    metric: "Maintenance Overhead",
-    legacy: "High Manual",
-    dblock: "Zero-Touch Automation",
+    metric: "Escalabilidad",
+    legacy: "Solución limitada",
+    dblock: "Base técnica lista para crecer con tu empresa",
   },
 ];
 
@@ -107,27 +107,27 @@ const Benefits = () => {
         <div className="benefits-hero-content">
           <div className="benefits-status">
             <span className="material-symbols-outlined">terminal</span>
-            <p>System Status: Optimized</p>
+            <p>Beneficios para empresas</p>
           </div>
 
-          <h1>Engineered for Performance</h1>
+          <h1>Beneficios de trabajar con Dblock</h1>
 
           <p className="benefits-hero-text">
-            An industrial-grade infrastructure layer built for the next
-            generation of high-density computational environments. Precision,
-            security, and absolute reliability.
+            Desarrollamos páginas web, SEO, aplicaciones e infraestructura
+            digital para empresas que quieren mejorar su presencia online,
+            ordenar sus procesos y conseguir más consultas.
           </p>
 
           <div className="benefits-buttons">
             <a href="#cta" className="benefits-btn benefits-btn-primary">
-              Deploy Protocol
+              Pedir consulta
             </a>
 
             <a
               href="#comparison"
               className="benefits-btn benefits-btn-secondary"
             >
-              Technical Specs
+              Ver comparación
             </a>
           </div>
         </div>
@@ -135,7 +135,7 @@ const Benefits = () => {
         <div className="benefits-hero-image">
           <img
             src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=1400&q=80"
-            alt="Cybernetic technology grid"
+            alt="Beneficios de desarrollo web, SEO e infraestructura digital"
           />
         </div>
       </section>
@@ -153,7 +153,7 @@ const Benefits = () => {
 
       <section className="benefits-section benefits-core">
         <div className="benefits-section-header">
-          <h2>Core Advantages</h2>
+          <h2>Ventajas principales</h2>
           <div></div>
         </div>
 
@@ -168,7 +168,6 @@ const Benefits = () => {
               <span className="material-symbols-outlined">{item.icon}</span>
 
               <h3>{item.title}</h3>
-
               <p>{item.text}</p>
 
               <div className="benefits-card-line"></div>
@@ -178,15 +177,15 @@ const Benefits = () => {
       </section>
 
       <section id="comparison" className="benefits-section benefits-comparison">
-        <h2>Baseline vs. DBLOCK</h2>
+        <h2>Dblock vs. una solución digital improvisada</h2>
 
         <div className="benefits-table-wrapper">
           <table className="benefits-table">
             <thead>
               <tr>
-                <th>Metrics</th>
-                <th>Standard Legacy</th>
-                <th>DBLOCK Protocol</th>
+                <th>Área</th>
+                <th>Solución común</th>
+                <th>Con Dblock</th>
               </tr>
             </thead>
 
@@ -206,16 +205,15 @@ const Benefits = () => {
       <section id="cta" className="benefits-cta">
         <img
           src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80"
-          alt="Global digital network"
+          alt="Red digital e infraestructura tecnológica para empresas"
         />
 
         <div className="benefits-cta-content">
-          <h2>Ready to Scale?</h2>
+          <h2>¿Querés mejorar tu presencia digital?</h2>
 
           <p>
-            Join the ranks of high-performance organizations leveraging DBLOCK
-            to power their infrastructure. Secure, efficient, and ready for
-            deployment.
+            Hablemos sobre tu empresa y definamos qué solución necesitás:
+            página web, SEO, aplicación web, app móvil o infraestructura digital.
           </p>
 
           <div className="benefits-cta-buttons">
@@ -223,14 +221,14 @@ const Benefits = () => {
               href="mailto:contact@dblock.com"
               className="benefits-cta-primary"
             >
-              Scale Your Infrastructure
+              Solicitar una consulta
             </a>
 
             <a
-              href="mailto:sales@dblock.com"
+              href="mailto:contact@dblock.com"
               className="benefits-cta-secondary"
             >
-              Contact Sales
+              Contactar a Dblock
             </a>
           </div>
         </div>

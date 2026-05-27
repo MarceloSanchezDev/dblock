@@ -4,44 +4,44 @@ const lifecycleSteps = [
   {
     number: "01",
     icon: "search",
-    title: "Discovery",
-    text: "Deep-dive extraction of system requirements and performance bottlenecks in legacy infrastructures.",
+    title: "Diagnóstico",
+    text: "Analizamos tu empresa, tus objetivos, tu sitio actual y las oportunidades de mejora digital.",
     color: "blue",
   },
   {
     number: "02",
     icon: "terminal",
-    title: "Strategy",
-    text: "Synthesizing raw data into an actionable roadmap aligned with core business vertical objectives.",
+    title: "Estrategia",
+    text: "Definimos qué solución conviene: página web, SEO, aplicación web, app móvil o infraestructura.",
     color: "green",
   },
   {
     number: "03",
     icon: "schema",
-    title: "Architecture",
-    text: "Designing high-resilience structural blueprints with 99.999% uptime redundancy targets.",
+    title: "Arquitectura",
+    text: "Organizamos la estructura técnica, el contenido, las secciones y el flujo de conversión del proyecto.",
     color: "blue",
     active: true,
   },
   {
     number: "04",
     icon: "code_blocks",
-    title: "Development",
-    text: "Agile engineering sprints focused on clean code, modular integrity, and low-latency execution.",
+    title: "Desarrollo",
+    text: "Construimos la solución con buenas prácticas, código mantenible, diseño responsive y foco en rendimiento.",
     color: "blue",
   },
   {
     number: "05",
     icon: "rocket_launch",
-    title: "Deployment",
-    text: "Seamless transition to live environments through blue-green strategies and automated CI/CD pipelines.",
+    title: "Publicación",
+    text: "Preparamos el despliegue, revisamos detalles técnicos y dejamos la solución lista para funcionar online.",
     color: "green",
   },
   {
     number: "06",
     icon: "query_stats",
-    title: "Optimization",
-    text: "Continuous feedback loops and hardware acceleration tuning to maintain peak performance thresholds.",
+    title: "Optimización",
+    text: "Medimos resultados, corregimos problemas y mejoramos la experiencia para conseguir más consultas.",
     color: "blue",
   },
 ];
@@ -49,20 +49,20 @@ const lifecycleSteps = [
 const ecosystemItems = [
   {
     letter: "A",
-    title: "Core Sync",
-    text: "Real-time synchronization of decentralized nodes across global hardware clusters.",
+    title: "Contenido y SEO",
+    text: "Trabajamos textos, estructura, palabras clave y secciones pensadas para que Google entienda mejor tu negocio.",
     color: "blue",
   },
   {
     letter: "B",
-    title: "L2 Validation",
-    text: "Secondary layer verification protocols ensuring zero-knowledge cryptographic security.",
+    title: "Diseño y conversión",
+    text: "Creamos interfaces claras, profesionales y orientadas a que el visitante realice una consulta.",
     color: "green",
   },
   {
     letter: "C",
-    title: "Edge Push",
-    text: "Low-latency data distribution to edge compute environments for immediate response times.",
+    title: "Tecnología e infraestructura",
+    text: "Desarrollamos y publicamos soluciones estables, rápidas y preparadas para crecer con tu empresa.",
     color: "gray",
   },
 ];
@@ -76,34 +76,34 @@ const Approach = () => {
         <img
           className="approach-hero-bg"
           src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=1600&q=80"
-          alt="Technical methodology background"
+          alt="Metodología de desarrollo web y soluciones digitales para empresas"
         />
 
         <div className="approach-container">
           <div className="approach-hero-panel">
             <div className="approach-status">
               <span></span>
-              <p>Operational Standards v2.4</p>
+              <p>Proceso de trabajo profesional</p>
             </div>
 
             <h1>
-              Strategic <br />
-              <span>Methodology</span>
+              Metodología de <br />
+              <span>trabajo digital</span>
             </h1>
 
             <p className="approach-hero-text">
-              A rigorous, industrial-grade framework engineered for high-density
-              information environments and mission-critical system deployment.
-              We eliminate ambiguity through structural honesty.
+              En Dblock trabajamos con un proceso claro para crear páginas web,
+              SEO, aplicaciones web, aplicaciones móviles e infraestructura
+              digital para empresas que necesitan resultados reales.
             </p>
 
             <div className="approach-buttons">
               <a href="#lifecycle" className="approach-btn approach-btn-primary">
-                View Parameters
+                Ver proceso
               </a>
 
               <a href="#ecosystem" className="approach-btn approach-btn-secondary">
-                Technical Specs
+                Ver enfoque
               </a>
             </div>
           </div>
@@ -113,8 +113,8 @@ const Approach = () => {
       <section id="lifecycle" className="approach-section approach-lifecycle">
         <div className="approach-container">
           <div className="approach-section-title">
-            <h2>Operational Lifecycle</h2>
-            <p>PHASE SEQUENCE: 01 THROUGH 06</p>
+            <h2>Cómo desarrollamos soluciones digitales</h2>
+            <p>PROCESO DE TRABAJO: 01 AL 06</p>
           </div>
 
           <div className="approach-lifecycle-grid">
@@ -131,7 +131,6 @@ const Approach = () => {
                 </div>
 
                 <h3>{step.title}</h3>
-
                 <p>{step.text}</p>
 
                 <div className="approach-step-line"></div>
@@ -147,7 +146,7 @@ const Approach = () => {
             <div className="approach-flow-image">
               <img
                 src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1400&q=80"
-                alt="System flow visualization"
+                alt="Estrategia digital, SEO y desarrollo web para empresas"
               />
             </div>
 
@@ -157,8 +156,8 @@ const Approach = () => {
 
           <div className="approach-ecosystem-content">
             <h2>
-              Integration <br />
-              <span>Ecosystem</span>
+              Enfoque <br />
+              <span>integral</span>
             </h2>
 
             <div className="approach-ecosystem-list">
@@ -185,22 +184,22 @@ const Approach = () => {
         <div className="approach-container">
           <div className="approach-cta-box">
             <h2>
-              Ready to <br />
-              Integrate?
+              ¿Querés iniciar <br />
+              un proyecto?
             </h2>
 
             <p>
-              Connect with our engineering lead to discuss your system
-              parameters and optimization requirements.
+              Contanos qué necesita tu empresa y te ayudamos a definir la mejor
+              solución digital: web, SEO, aplicación o infraestructura.
             </p>
 
             <a href="mailto:contact@dblock.com" className="approach-cta-button">
-              Initiate Consultation
+              Solicitar una consulta
             </a>
 
             <div className="approach-cta-status">
               <span></span>
-              <p>System Ready for Protocol Link</p>
+              <p>Listos para analizar tu proyecto</p>
             </div>
           </div>
         </div>

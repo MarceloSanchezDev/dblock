@@ -3,29 +3,29 @@ import "./Contact.css";
 const trustBadges = [
   {
     icon: "speed",
-    title: "Fast Response",
-    text: "SLA-backed 4-hour response time for critical architecture inquiries.",
+    title: "Respuesta rápida",
+    text: "Revisamos tu consulta para entender qué necesita tu empresa y proponerte el próximo paso.",
     color: "blue",
   },
   {
     icon: "terminal",
-    title: "Technical Assessment",
-    text: "Every inquiry is reviewed by a Lead Systems Architect, not a sales agent.",
+    title: "Análisis técnico",
+    text: "Evaluamos si necesitás una página web, SEO, una aplicación, infraestructura o una mejora sobre lo existente.",
     color: "green",
   },
   {
     icon: "architecture",
-    title: "Personalized Solutions",
-    text: "Tailored deployment strategies matching your specific legacy stack and future requirements.",
+    title: "Soluciones a medida",
+    text: "Adaptamos la propuesta al tipo de empresa, presupuesto, objetivos y etapa del proyecto.",
     color: "blue",
   },
 ];
 
 const budgetOptions = [
-  "$10k - $50k",
-  "$50k - $200k",
-  "$200k - $500k",
-  "$500k+",
+  "A definir",
+  "Proyecto inicial",
+  "Proyecto avanzado",
+  "Mantenimiento mensual",
 ];
 
 const Contact = () => {
@@ -35,15 +35,15 @@ const Contact = () => {
         <section className="contact-hero">
           <div className="contact-status">
             <span></span>
-            <p>System Online // Active Nodes</p>
+            <p>Consultas abiertas para empresas</p>
           </div>
 
-          <h1>Connect with an Architect</h1>
+          <h1>Contactá a Dblock</h1>
 
           <p>
-            Initiate a high-priority communication link with our engineering
-            team. We specialize in architecting resilient digital foundations
-            for industrial-scale enterprises.
+            Contanos qué necesita tu empresa. Podemos ayudarte con páginas web,
+            SEO, aplicaciones web, aplicaciones móviles, infraestructura digital
+            y mantenimiento técnico.
           </p>
         </section>
 
@@ -68,26 +68,26 @@ const Contact = () => {
 
             <div className="contact-info-card">
               <div>
-                <span>HQ Coordinates</span>
+                <span>Ubicación</span>
                 <h3>Buenos Aires, Argentina</h3>
-                <p>Morón, Buenos Aires Province</p>
+                <p>Morón, Provincia de Buenos Aires</p>
               </div>
 
               <div className="contact-info-grid">
                 <div>
-                  <span>Secure Line</span>
+                  <span>Teléfono</span>
                   <p>+54 11 0000-0000</p>
                 </div>
 
                 <div>
-                  <span>Email Link</span>
-                  <p>architect@dblock.systems</p>
+                  <span>Email</span>
+                  <p>contact@dblock.com</p>
                 </div>
               </div>
 
               <div className="contact-operations">
                 <div>
-                  <strong>24/7 Operations</strong>
+                  <strong>Atención a empresas</strong>
 
                   <div className="contact-signal-bars">
                     <span></span>
@@ -98,8 +98,8 @@ const Contact = () => {
                 </div>
 
                 <p>
-                  Active monitoring and support nodes globally distributed
-                  across multiple regions.
+                  Podemos ayudarte a definir el alcance del proyecto, mejorar tu
+                  sitio actual o crear una nueva solución digital desde cero.
                 </p>
               </div>
             </div>
@@ -109,53 +109,54 @@ const Contact = () => {
             <form className="contact-form">
               <div className="contact-form-grid">
                 <div className="contact-field">
-                  <label htmlFor="fullName">Full Name</label>
+                  <label htmlFor="fullName">Nombre y apellido</label>
                   <input
                     id="fullName"
                     type="text"
-                    placeholder="Entry required..."
+                    placeholder="Escribí tu nombre"
                   />
                 </div>
 
                 <div className="contact-field">
-                  <label htmlFor="email">Email Address</label>
+                  <label htmlFor="email">Email</label>
                   <input
                     id="email"
                     type="email"
-                    placeholder="secure@protocol.com"
+                    placeholder="tuemail@empresa.com"
                   />
                 </div>
 
                 <div className="contact-field">
-                  <label htmlFor="company">Company</label>
+                  <label htmlFor="company">Empresa</label>
                   <input
                     id="company"
                     type="text"
-                    placeholder="Entity name..."
+                    placeholder="Nombre de tu empresa"
                   />
                 </div>
 
                 <div className="contact-field">
-                  <label htmlFor="service">Service Stream</label>
+                  <label htmlFor="service">Servicio que necesitás</label>
                   <select id="service" defaultValue="">
                     <option value="" disabled>
-                      Select Protocol...
+                      Seleccioná una opción
                     </option>
-                    <option>Software Architecture</option>
-                    <option>Web Infrastructure</option>
-                    <option>Cloud Migration</option>
-                    <option>Cybersecurity Audit</option>
-                    <option>Industrial Automation</option>
+                    <option>Página web para empresa</option>
+                    <option>SEO y posicionamiento web</option>
+                    <option>Aplicación web a medida</option>
+                    <option>Aplicación móvil</option>
+                    <option>Infraestructura digital</option>
+                    <option>Mantenimiento o soporte técnico</option>
                   </select>
                 </div>
 
                 <div className="contact-field contact-full">
-                  <label>Estimated Budget Range</label>
+                  <label>Tipo de proyecto</label>
 
                   <div className="contact-budget-grid">
                     {budgetOptions.map((option, index) => (
                       <button
-                        className={index === 1 ? "active" : ""}
+                        className={index === 0 ? "active" : ""}
                         type="button"
                         key={option}
                       >
@@ -166,17 +167,17 @@ const Contact = () => {
                 </div>
 
                 <div className="contact-field contact-full">
-                  <label htmlFor="message">Message Payload</label>
+                  <label htmlFor="message">Mensaje</label>
                   <textarea
                     id="message"
                     rows="4"
-                    placeholder="Describe the scope of your objective..."
+                    placeholder="Contanos qué necesitás, cuál es tu objetivo y si ya tenés una web o proyecto en marcha."
                   ></textarea>
                 </div>
               </div>
 
               <button className="contact-submit" type="submit">
-                Transmit Secure Request
+                Enviar consulta
               </button>
             </form>
           </section>
@@ -184,17 +185,17 @@ const Contact = () => {
 
         <section className="contact-map-section">
           <div className="contact-map-header">
-            <h2>Global Node Infrastructure</h2>
+            <h2>Atención digital para empresas</h2>
 
             <div>
               <span>
                 <i className="blue-dot"></i>
-                Primary Hubs
+                Buenos Aires
               </span>
 
               <span>
                 <i className="green-dot"></i>
-                Active Nodes
+                Argentina
               </span>
             </div>
           </div>
@@ -202,17 +203,17 @@ const Contact = () => {
           <div className="contact-map-card">
             <img
               src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80"
-              alt="Global node infrastructure map"
+              alt="Servicios digitales para empresas en Buenos Aires Argentina"
             />
 
             <div className="contact-map-hud contact-map-hud-left">
-              <p>LATITUDE: 34.6037° S</p>
-              <p>LONGITUDE: 58.3816° W</p>
+              <p>UBICACIÓN: BUENOS AIRES</p>
+              <p>ZONA: MORÓN</p>
             </div>
 
             <div className="contact-map-hud contact-map-hud-right">
-              <p>NETWORK STATUS: OPTIMAL</p>
-              <span>LATENCY: 12ms AVG</span>
+              <p>CONSULTAS: ACTIVAS</p>
+              <span>RESPUESTA: A COORDINAR</span>
             </div>
           </div>
         </section>
