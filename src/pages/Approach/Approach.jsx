@@ -1,3 +1,4 @@
+import FirstSectionPage from "../../components/FirstSectionPage/FirstSectionPage";
 import "./Approach.css";
 
 const lifecycleSteps = [
@@ -70,46 +71,14 @@ const ecosystemItems = [
 const Approach = () => {
   return (
     <main className="approach-page">
-      <section className="approach-hero">
-        <div className="approach-grid-bg"></div>
-
-        <img
-          className="approach-hero-bg"
-          src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=1600&q=80"
-          alt="Metodología de desarrollo web y soluciones digitales para empresas"
-        />
-
-        <div className="approach-container">
-          <div className="approach-hero-panel">
-            <div className="approach-status">
-              <span></span>
-              <p>Proceso de trabajo profesional</p>
-            </div>
-
-            <h1>
-              Metodología de <br />
-              <span>trabajo digital</span>
-            </h1>
-
-            <p className="approach-hero-text">
-              En Dblock trabajamos con un proceso claro para crear páginas web,
-              SEO, aplicaciones web, aplicaciones móviles e infraestructura
-              digital para empresas que necesitan resultados reales.
-            </p>
-
-            <div className="approach-buttons">
-              <a href="#lifecycle" className="approach-btn approach-btn-primary">
-                Ver proceso
-              </a>
-
-              <a href="#ecosystem" className="approach-btn approach-btn-secondary">
-                Ver enfoque
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
+    <FirstSectionPage
+     btnPrimary={ { text: "Ver proceso", href: "#lifecycle" } }
+     btnSecondary={ { text: "Ver enfoque", href: "#ecosystem" } }
+     description={"En Dblock trabajamos con un proceso claro para crear páginas web, SEO, aplicaciones web, aplicaciones móviles e infraestructura digital para empresas que necesitan resultados reales."} 
+     title={" Metodología de trabajo digital"}
+     span={"Proceso de trabajo profesional"}
+     statusCard={`SISTEMAS A MEDIDA`}
+     />
       <section id="lifecycle" className="approach-section approach-lifecycle">
         <div className="approach-container">
           <div className="approach-section-title">

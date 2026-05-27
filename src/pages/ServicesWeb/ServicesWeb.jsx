@@ -1,3 +1,4 @@
+import FirstSectionPage from "../../components/FirstSectionPage/FirstSectionPage";
 import "./ServiciosWeb.css";
 
 const capabilities = [
@@ -62,50 +63,14 @@ const techStack = [
 const ServiciosWeb = () => {
   return (
     <>
-      <section className="servicios-web-hero">
-        <div className="servicios-web-hero-glow"></div>
-
-        <div className="servicios-web-hero-content">
-          <div className="servicios-web-status">
-            <span></span>
-            <p>Servicios web para empresas</p>
-          </div>
-
-          <h1>
-            Desarrollo web para <br />
-            <span>empresas</span>
-          </h1>
-
-          <p className="servicios-web-hero-text">
-            Creamos páginas web, landing pages, ecommerce y aplicaciones web
-            para empresas que quieren mejorar su presencia online, explicar
-            mejor sus servicios y conseguir más consultas.
-          </p>
-
-          <div className="servicios-web-buttons">
-            <a
-              href="#contact"
-              className="servicios-web-btn servicios-web-btn-primary"
-            >
-              Solicitar una consulta
-            </a>
-
-            <a
-              href="#documentation"
-              className="servicios-web-btn servicios-web-btn-secondary"
-            >
-              Ver servicios web
-            </a>
-          </div>
-        </div>
-
-        <div className="servicios-web-hero-image">
-          <img
-            src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80"
-            alt="Desarrollo de páginas web y aplicaciones para empresas"
-          />
-        </div>
-      </section>
+    <FirstSectionPage
+         btnPrimary={ { text: "Ver soluciones", href: "#capabilities" } }
+         btnSecondary={ { text: "Solicitar consulta", href: "/contacto" } }
+         description={"Creamos páginas web, landing pages, ecommerce y aplicaciones webpara empresas que quieren mejorar su presencia online, explicarmejor sus servicios y conseguir más consultas."} 
+         title={"Desarrollo web para empresas"}
+         span={"Servicios web para empresas"}
+         statusCard={`DESARROLLO WEB - SEO TÉCNICO - APLICACIONES WEB A MEDIDA - TECNOLOGÍAS Y PROCESO DE TRABAJO`}
+         />
 
       <section
         id="documentation"

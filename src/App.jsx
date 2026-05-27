@@ -1,18 +1,18 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import Home from "./components/Home/Home";
+import Home from "./pages/Home/Home";
 import Nav from "./components/Nav/Nav";
 import Footer from "./components/Footer/Footer";
 
-import ServiciosWeb from "./components/ServicesWeb/ServicesWeb";
-import ServiciosCloud from "./components/ServicesCloud/ServicesCloud";
-import ServiciosAutomation from "./components/ServiciesAutomation/ServiceAutomation";
+import ServiciosWeb from "./pages/ServicesWeb/ServicesWeb";
+import ServiciosCloud from "./pages/ServicesCloud/ServicesCloud";
+import ServiciosAutomation from "./pages/ServiciesAutomation/ServiceAutomation";
 
-import Approach from "./components/Approach/Approach";
-import Benefits from "./components/Beneficts/Benefits";
-import Contact from "./components/Contact/Contact";
-import Solutions from "./components/Solutions/Solutions";
+import Approach from "./pages/Approach/Approach";
+import Benefits from "./pages/Beneficts/Benefits";
+import Contact from "./pages/Contact/Contact";
+import Solutions from "./pages/Solutions/Solutions";
 
 function App() {
   return (

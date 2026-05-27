@@ -1,3 +1,4 @@
+import FirstSectionPage from "../../components/FirstSectionPage/FirstSectionPage";
 import "./Home.css";
 
 const services = [
@@ -74,45 +75,14 @@ const benefits = [
 const Home = () => {
   return (
     <>
-      <section className="home-hero">
-        <div className="home-grid-bg"></div>
-
-        <div className="home-container home-hero-content">
-          <span className="home-eyebrow">
-            DESARROLLO WEB · SEO · APPS · INFRAESTRUCTURA
-          </span>
-
-          <h1>
-            Desarrollo web, SEO y aplicaciones para{" "}
-            <span>empresas</span>
-          </h1>
-
-          <p>
-            En Dblock creamos páginas web, aplicaciones web, apps móviles e
-            infraestructura digital para empresas que quieren mejorar su
-            presencia online, conseguir más consultas y trabajar con soluciones
-            tecnológicas confiables.
-          </p>
-
-          <div className="home-hero-buttons">
-            <a href="#contact" className="home-btn home-btn-primary">
-              Solicitar una consulta
-            </a>
-
-            <a href="#solutions" className="home-btn home-btn-secondary">
-              Ver servicios
-            </a>
-          </div>
-        </div>
-
-        <div className="home-status-card">
-          SITIOS WEB
-          <br />
-          SEO TÉCNICO
-          <br />
-          SISTEMAS A MEDIDA
-        </div>
-      </section>
+    <FirstSectionPage
+     btnPrimary={ { text: "Solicitar una consulta", href: "/contacto" } }
+     btnSecondary={ { text: "Ver Servicios", href: "/soluciones" } }
+     description={"En Dblock creamos páginas web, aplicaciones web, apps móviles e infraestructura digital para empresas que quieren mejorar su presencia online, conseguir más consultas y trabajar con soluciones tecnológicas confiables."} 
+     title={"Desarrollo web, SEO y aplicaciones para empresas"}
+     span={"DESARROLLO WEB · SEO · APPS · INFRAESTRUCTURA"}
+     statusCard={`SITIOS WEB - SEO TÉCNICO - SISTEMAS A MEDIDA`}
+     />
 
       <section id="solutions" className="home-section home-solutions">
         <div className="home-container">

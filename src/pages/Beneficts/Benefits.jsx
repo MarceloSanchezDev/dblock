@@ -139,7 +139,6 @@ const Benefits = () => {
           />
         </div>
       </section>
-
       <section className="benefits-metrics">
         {metrics.map((metric) => (
           <article key={metric.label}>

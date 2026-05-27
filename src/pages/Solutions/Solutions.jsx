@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Solutions.css";
+import FirstSectionPage from "../../components/FirstSectionPage/FirstSectionPage";
 
 const solutionCards = [
   {
@@ -160,43 +161,14 @@ const processSteps = [
 const Solutions = () => {
   return (
     <main className="solutions-page">
-      <section className="solutions-hero">
-        <div className="solutions-hero-glow"></div>
-
-        <div className="solutions-hero-content">
-          <span className="solutions-eyebrow">
-            Soluciones digitales para empresas
-          </span>
-
-          <h1>
-            Desarrollo web, cloud y automatización para empresas
-          </h1>
-
-          <p>
-            En Dblock ayudamos a empresas a mejorar su presencia online,
-            ordenar sus procesos digitales y construir soluciones tecnológicas
-            estables, escalables y orientadas a generar más consultas.
-          </p>
-
-          <div className="solutions-hero-buttons">
-            <a
-              href="#capabilities"
-              className="solutions-btn solutions-btn-primary"
-            >
-              Ver soluciones
-            </a>
-
-            <Link
-              to="/contacto"
-              className="solutions-btn solutions-btn-secondary"
-            >
-              Solicitar consulta
-            </Link>
-          </div>
-        </div>
-
-        <div className="solutions-scan-line"></div>
-      </section>
+      <FirstSectionPage
+     btnPrimary={ { text: "Ver soluciones", href: "#capabilities" } }
+     btnSecondary={ { text: "Solicitar consulta", href: "/contacto" } }
+     description={"En Dblock ayudamos a empresas a mejorar su presencia online, ordenar sus procesos digitales y construir soluciones tecnológicas estables, escalables y orientadas a generar más consultas."} 
+     title={"Desarrollo web, cloud y automatización para empresas"}
+     span={"Soluciones digitales para empresas"}
+     statusCard={`SOLUCIONES DESTACADAS - PROBLEMAS QUE RESOLVEMOS - TECNOLOGÍAS Y PROCESO DE TRABAJO`}
+     />
 
       <section
         id="capabilities"

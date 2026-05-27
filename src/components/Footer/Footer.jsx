@@ -1,31 +1,42 @@
 import "./Footer.css";
 import { Link } from "react-router-dom";
 
+const currentYear = new Date().getFullYear();
+
 const Footer = () => {
   return (
     <footer className="home-footer">
       <div>
         <h2>DBLOCK</h2>
-        <p>Industrial Systems Interface v4.2.1</p>
+
+        <p>
+          Desarrollo web, SEO, aplicaciones e infraestructura digital para
+          empresas.
+        </p>
       </div>
 
       <div>
-        <h4>Resources</h4>
-        <Link to="/soluciones">Solutions</Link>
-        <Link to="/acerca-de-nosotros">Approach</Link>
-        <Link to="/beneficios">Benefits</Link>
+        <h4>Servicios</h4>
+        <Link to="/servicios-web">Páginas web para empresas</Link>
+        <Link to="/servicios-cloud">Cloud e infraestructura</Link>
+        <Link to="/servicios-automatizacion">Automatización de procesos</Link>
       </div>
 
       <div>
-        <h4>Company</h4>
-        <Link to="/contacto">Contact</Link>
-        <Link to="/soluciones">Services</Link>
-        <Link to="/acerca-de-nosotros">Process</Link>
+        <h4>Empresa</h4>
+        <Link to="/soluciones">Soluciones digitales</Link>
+        <Link to="/beneficios">Beneficios</Link>
+        <Link to="/acerca-de-nosotros">Nosotros</Link>
+        <Link to="/contacto">Contacto</Link>
       </div>
 
       <div className="home-footer-status">
         <span></span>
-        Status: Operational
+
+        <div>
+          <strong>Consultas abiertas</strong>
+          <p>Buenos Aires, Argentina · {currentYear}</p>
+        </div>
       </div>
     </footer>
   );

@@ -1,3 +1,4 @@
+import FirstSectionPage from "../../components/FirstSectionPage/FirstSectionPage";
 import "./ServiciosAutomation.css";
 
 const capabilities = [
@@ -63,44 +64,14 @@ const logicItems = [
 const ServiciosAutomation = () => {
   return (
     <main className="servicios-automation-page">
-      <section className="servicios-automation-hero">
-        <div className="servicios-automation-glow"></div>
-
-        <div className="servicios-automation-hero-content">
-          <div className="servicios-automation-status">
-            <span></span>
-            <p>Automatización para empresas</p>
-          </div>
-
-          <h1>
-            Automatización de <br />
-            <span>procesos digitales</span>
-          </h1>
-
-          <p>
-            Ayudamos a empresas a ordenar tareas repetitivas, conectar
-            herramientas, digitalizar procesos y crear sistemas que ahorran
-            tiempo, reducen errores y mejoran la operación diaria.
-          </p>
-
-          <div className="servicios-automation-buttons">
-            <a
-              href="#contact"
-              className="servicios-automation-btn servicios-automation-btn-primary"
-            >
-              Solicitar consulta
-            </a>
-
-            <a
-              href="#capabilities"
-              className="servicios-automation-btn servicios-automation-btn-secondary"
-            >
-              Ver soluciones
-            </a>
-          </div>
-        </div>
-      </section>
-
+<FirstSectionPage
+     btnPrimary={ { text: "Ver soluciones", href: "#capabilities" } }
+     btnSecondary={ { text: "Solicitar consulta", href: "/contacto" } }
+     description={"Ayudamos a empresas a ordenar tareas repetitivas, conectar herramientas, digitalizar procesos y crear sistemas que ahorran tiempo, reducen errores y mejoran la operación diaria."} 
+     title={"Automatización de procesos digitales"}
+     span={"Automatización para empresas"}
+     statusCard={``}
+     />
       <section
         id="capabilities"
         className="servicios-automation-section servicios-automation-capabilities"

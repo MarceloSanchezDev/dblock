@@ -1,27 +1,5 @@
 import "./ServiciosCloud.css";
-
-const metrics = [
-  {
-    label: "DISPONIBILIDAD",
-    value: "Estable",
-    color: "green",
-  },
-  {
-    label: "SEGURIDAD",
-    value: "Protegida",
-    color: "blue",
-  },
-  {
-    label: "ESCALABILIDAD",
-    value: "Flexible",
-    color: "white",
-  },
-  {
-    label: "SOPORTE",
-    value: "Técnico",
-    color: "white",
-  },
-];
+import FirstSectionPage from "../../components/FirstSectionPage/FirstSectionPage";
 
 const architectureItems = [
   "HOSTING Y SERVIDORES",
@@ -47,57 +25,14 @@ const securityCards = [
 const ServiciosCloud = () => {
   return (
     <>
-      <section className="servicios-cloud-hero">
-        <div className="servicios-cloud-hero-image">
-          <img
-            src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1400&q=80"
-            alt="Infraestructura cloud, servidores y hosting para empresas"
-          />
-        </div>
-
-        <div className="servicios-cloud-hero-content">
-          <div className="servicios-cloud-status">
-            <span></span>
-            <p>Infraestructura digital para empresas</p>
-          </div>
-
-          <h1>Servicios cloud e infraestructura web</h1>
-
-          <p className="servicios-cloud-hero-text">
-            Configuramos, optimizamos y mantenemos infraestructura digital para
-            empresas: hosting, servidores, despliegues, entornos cloud,
-            seguridad técnica y soporte para aplicaciones web.
-          </p>
-
-          <div className="servicios-cloud-buttons">
-            <a
-              href="#contact"
-              className="servicios-cloud-btn servicios-cloud-btn-primary"
-            >
-              Solicitar consulta
-            </a>
-
-            <a
-              href="#solutions"
-              className="servicios-cloud-btn servicios-cloud-btn-secondary"
-            >
-              Ver soluciones cloud
-            </a>
-          </div>
-        </div>
-
-        <div className="servicios-cloud-metrics">
-          {metrics.map((metric) => (
-            <article key={metric.label}>
-              <span>{metric.label}</span>
-              <strong className={`metric-${metric.color}`}>
-                {metric.value}
-              </strong>
-            </article>
-          ))}
-        </div>
-      </section>
-
+<FirstSectionPage
+         btnPrimary={ { text: "Solicitar consulta", href: "/contacto" } }
+         btnSecondary={ { text: "Ver soluciones cloud", href: "#solutions" } }
+         description={"Configuramos, optimizamos y mantenemos infraestructura digital paraempresas: hosting, servidores, despliegues, entornos cloud,seguridad técnica y soporte para aplicaciones web."} 
+         title={"Servicios cloud, infraestructura web<"}
+         span={"Infraestructura digital para empresas"}
+         statusCard={`INFRAESTRUCTURA DIGITAL PARA EMPRESAS`}
+         />
       <section
         id="solutions"
         className="servicios-cloud-section servicios-cloud-solutions"
