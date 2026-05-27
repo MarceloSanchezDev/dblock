@@ -3,22 +3,22 @@ import "./ServiciosAutomation.css";
 const capabilities = [
   {
     icon: "settings_input_component",
-    code: "SRCE-041",
-    title: "CI/CD Pipelines",
-    text: "Automated deployment cycles that minimize human intervention. Continuous integration frameworks designed for sub-second latency in mission-critical environments.",
+    code: "AUTO-01",
+    title: "Automatización de procesos",
+    text: "Digitalizamos tareas repetitivas para reducir errores, ahorrar tiempo y mejorar la operación diaria de tu empresa.",
     type: "large",
   },
   {
     icon: "schema",
-    title: "Business Process Automation",
-    text: "Streamlining administrative and operational workflows using bespoke neural logic.",
+    title: "Flujos de trabajo digitales",
+    text: "Ordenamos procesos administrativos, comerciales u operativos mediante herramientas digitales adaptadas a tu negocio.",
     type: "small",
     color: "purple",
   },
   {
     icon: "bolt",
-    title: "Legacy System Migration",
-    text: "Decoupling monolithic architectures into modern, scalable cloud-native microservices.",
+    title: "Modernización de sistemas",
+    text: "Mejoramos procesos existentes, conectamos herramientas y ayudamos a reemplazar tareas manuales por soluciones más eficientes.",
     type: "small",
     color: "green",
   },
@@ -26,18 +26,18 @@ const capabilities = [
 
 const benefits = [
   {
-    title: "Efficiency",
-    text: "Reduce operational latency by up to 84% through direct hardware-to-logic synchronization and eliminating redundant human validation layers.",
+    title: "Más eficiencia",
+    text: "Reducí tareas manuales, tiempos de carga, duplicación de información y pasos innecesarios dentro de tu operación.",
     color: "blue",
   },
   {
-    title: "Cost Reduction",
-    text: "Minimize overhead by automating repetitive high-frequency tasks. Our systems pay for themselves within the first fiscal quarter of deployment.",
+    title: "Menos errores",
+    text: "La automatización ayuda a evitar olvidos, errores de carga y procesos desordenados que afectan la productividad.",
     color: "green",
   },
   {
-    title: "Future-Proofing",
-    text: "Building on modular frameworks that evolve with your enterprise. No more tech debt—just persistent, scalable innovation infrastructure.",
+    title: "Procesos escalables",
+    text: "Creamos soluciones que pueden crecer junto con tu empresa y adaptarse a nuevas áreas, usuarios o necesidades.",
     color: "purple",
   },
 ];
@@ -45,17 +45,17 @@ const benefits = [
 const logicItems = [
   {
     icon: "settings",
-    title: "Kinetic Automation Engine",
+    title: "Automatización de tareas repetitivas",
     color: "blue",
   },
   {
     icon: "account_tree",
-    title: "Non-Linear Flow Architecture",
+    title: "Diseño de flujos de trabajo",
     color: "purple",
   },
   {
     icon: "radar",
-    title: "Predictive System Monitoring",
+    title: "Monitoreo y mejora continua",
     color: "green",
   },
 ];
@@ -69,18 +69,18 @@ const ServiciosAutomation = () => {
         <div className="servicios-automation-hero-content">
           <div className="servicios-automation-status">
             <span></span>
-            <p>System Status: Operational</p>
+            <p>Automatización para empresas</p>
           </div>
 
           <h1>
-            The Future of <br />
-            <span>Workflow</span>
+            Automatización de <br />
+            <span>procesos digitales</span>
           </h1>
 
           <p>
-            Architecting high-performance industrial automation and digital
-            pipelines. We bridge the gap between legacy infrastructure and
-            autonomous technical ecosystems.
+            Ayudamos a empresas a ordenar tareas repetitivas, conectar
+            herramientas, digitalizar procesos y crear sistemas que ahorran
+            tiempo, reducen errores y mejoran la operación diaria.
           </p>
 
           <div className="servicios-automation-buttons">
@@ -88,14 +88,14 @@ const ServiciosAutomation = () => {
               href="#contact"
               className="servicios-automation-btn servicios-automation-btn-primary"
             >
-              Initialize Transformation
+              Solicitar consulta
             </a>
 
             <a
               href="#capabilities"
               className="servicios-automation-btn servicios-automation-btn-secondary"
             >
-              View Documentation
+              Ver soluciones
             </a>
           </div>
         </div>
@@ -107,8 +107,8 @@ const ServiciosAutomation = () => {
       >
         <div className="servicios-automation-container">
           <div className="servicios-automation-section-header">
-            <span>01 / Capabilities</span>
-            <h2>IT Consulting & Automation</h2>
+            <span>01 / Automatización</span>
+            <h2>Consultoría IT y automatización de procesos</h2>
           </div>
 
           <div className="servicios-automation-bento">
@@ -119,63 +119,55 @@ const ServiciosAutomation = () => {
                     settings_input_component
                   </span>
 
-                  <strong>SRCE-041</strong>
+                  <strong>AUTO-01</strong>
                 </div>
 
-                <h3>CI/CD Pipelines</h3>
+                <h3>Automatización de tareas</h3>
 
                 <p>
-                  Automated deployment cycles that minimize human intervention.
-                  Continuous integration frameworks designed for sub-second
-                  latency in mission-critical environments.
+                  Analizamos tus procesos actuales y detectamos tareas que pueden
+                  automatizarse para ahorrar tiempo, reducir errores y mejorar la
+                  productividad del equipo.
                 </p>
               </div>
 
               <a href="#contact" className="servicios-automation-card-link">
-                Explore Integrations
+                Consultar automatización
                 <span className="material-symbols-outlined">arrow_forward</span>
               </a>
             </article>
 
-            <article className="servicios-automation-card servicios-automation-card-small purple-card">
-              <span className="material-symbols-outlined icon-purple filled-icon">
-                schema
-              </span>
+            {capabilities.slice(1).map((item) => (
+              <article
+                className={`servicios-automation-card servicios-automation-card-small ${item.color}-card`}
+                key={item.title}
+              >
+                <span
+                  className={`material-symbols-outlined icon-${item.color} ${
+                    item.color === "purple" ? "filled-icon" : ""
+                  }`}
+                >
+                  {item.icon}
+                </span>
 
-              <div>
-                <h3>Business Process Automation</h3>
-
-                <p>
-                  Streamlining administrative and operational workflows using
-                  bespoke neural logic.
-                </p>
-              </div>
-            </article>
-
-            <article className="servicios-automation-card servicios-automation-card-small green-card">
-              <span className="material-symbols-outlined icon-green">bolt</span>
-
-              <div>
-                <h3>Legacy System Migration</h3>
-
-                <p>
-                  Decoupling monolithic architectures into modern, scalable
-                  cloud-native microservices.
-                </p>
-              </div>
-            </article>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
+              </article>
+            ))}
 
             <article className="servicios-automation-image-card">
               <img
                 src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80"
-                alt="Industrial automation circuit board"
+                alt="Automatización de procesos digitales para empresas"
               />
 
               <div className="servicios-automation-image-overlay"></div>
 
               <div className="servicios-automation-live-feed">
-                <span>Live Feed</span>
-                <h3>Core Engine Sector 7</h3>
+                <span>Proceso digital</span>
+                <h3>Flujos automatizados</h3>
               </div>
             </article>
           </div>
@@ -206,10 +198,10 @@ const ServiciosAutomation = () => {
             <div className="servicios-automation-visual-grid">
               <div>
                 <span className="servicios-automation-label">
-                  Logic Visualization
+                  Flujo de trabajo
                 </span>
 
-                <h2>Integrated Gear Dynamics</h2>
+                <h2>Procesos más ordenados y eficientes</h2>
 
                 <div className="servicios-automation-logic-list">
                   {logicItems.map((item) => (
@@ -246,8 +238,39 @@ const ServiciosAutomation = () => {
                 </div>
 
                 <span className="servicios-automation-render-version">
-                  SYS_RENDER_0.8.2
+                  AUTOMATIZACIÓN DBLOCK
                 </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="servicios-automation-section">
+        <div className="servicios-automation-container">
+          <div className="servicios-automation-visual-card">
+            <div className="servicios-automation-visual-grid">
+              <div>
+                <span className="servicios-automation-label">
+                  Consultoría digital
+                </span>
+
+                <h2>¿Querés automatizar procesos en tu empresa?</h2>
+
+                <p>
+                  Contanos qué tareas se repiten en tu negocio y te ayudamos a
+                  detectar oportunidades de automatización, integración o
+                  desarrollo a medida.
+                </p>
+              </div>
+
+              <div>
+                <a
+                  href="mailto:contact@dblock.com"
+                  className="servicios-automation-btn servicios-automation-btn-primary"
+                >
+                  Pedir una consulta
+                </a>
               </div>
             </div>
           </div>
