@@ -587,3 +587,50 @@
     letter-spacing: 0.1em;
   }
 }
+
+.contact-field input[aria-invalid="true"],
+.contact-field select[aria-invalid="true"],
+.contact-field textarea[aria-invalid="true"] {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12);
+}
+
+.contact-field-error {
+  margin: 8px 0 0;
+  color: #f87171;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.contact-submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+  transform: none;
+}
+
+.contact-submit-message {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.contact-submit-message-success {
+  color: #bbf7d0;
+  background: rgba(22, 163, 74, 0.16);
+  border: 1px solid rgba(34, 197, 94, 0.28);
+}
+
+.contact-submit-message-error {
+  color: #fecaca;
+  background: rgba(239, 68, 68, 0.14);
+  border: 1px solid rgba(248, 113, 113, 0.24);
+}
+
+.contact-budget-grid button.active {
+  color: #ffffff;
+  background: rgba(31, 107, 255, 0.9);
+  border-color: rgba(31, 107, 255, 0.9);
+  box-shadow: 0 0 24px rgba(31, 107, 255, 0.28);
+}
