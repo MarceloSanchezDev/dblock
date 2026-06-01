@@ -3,7 +3,7 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const CONTACT_TO_EMAIL =
-  process.env.CONTACT_TO_EMAIL || "juan.bianchini@dblock.com.ar";
+  process.env.CONTACT_TO_EMAIL || "ventas@dblock.com.ar";
 
 const CONTACT_FROM_EMAIL =
   process.env.CONTACT_FROM_EMAIL || "Dblock <contacto@dblock.com.ar>";

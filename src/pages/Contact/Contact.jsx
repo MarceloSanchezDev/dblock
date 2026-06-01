@@ -205,7 +205,7 @@ const Contact = () => {
                 <div className="contact-info-grid">
                   <div>
                     <span>Email</span>
-                    <p>juan.bianchini@dblock.com.ar</p>
+                    <p>ventas@dblock.com.ar</p>
                   </div>
                 </div>
 
