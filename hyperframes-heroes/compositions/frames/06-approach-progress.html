@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="es-AR"><body><template>
+<style>
+@font-face { font-family:"Space Grotesk"; src:local("Arial"); } @font-face { font-family:"JetBrains Mono"; src:local("Courier New"); }
+#root { position:absolute; inset:0; overflow:hidden; background:#0e0e0f; color:#f4f5f7; font-family:"Space Grotesk",sans-serif; }.clip { position:absolute; inset:0; }.quiet { position:absolute; left:120px; top:210px; width:700px; height:650px; border:3px dashed rgba(244,245,247,.3); border-radius:28px; }.route { position:absolute; right:150px; top:490px; width:840px; height:4px; background:#1f6bff; }.point { position:absolute; top:450px; width:84px; height:84px; border:4px solid #f4f5f7; border-radius:50%; background:#0e0e0f; }.p1 { right:920px; }.p2 { right:755px; }.p3 { right:590px; border-color:#1f6bff; }.p4 { right:425px; }.p5 { right:260px; }.p6 { right:95px; border-color:#61df7d; }.label { position:absolute; right:155px; bottom:115px; font:700 25px "JetBrains Mono",monospace; letter-spacing:.14em; color:#61df7d; }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<div id="root" data-composition-id="approach-progress" data-start="0" data-duration="6" data-width="1920" data-height="1080"><section class="clip" data-start="0" data-duration="6" data-track-index="1"><div class="quiet"></div><div class="route"></div><i class="point p1"></i><i class="point p2"></i><i class="point p3"></i><i class="point p4"></i><i class="point p5"></i><i class="point p6"></i><div class="label">06 / MÉTODO</div></section></div>
+<script>window.__timelines=window.__timelines||{};const tl=gsap.timeline({paused:true});tl.fromTo(".route",{opacity:0,scaleX:0},{opacity:1,scaleX:1,duration:.8,ease:"power2.out"},.2).fromTo(".point",{opacity:0,scale:.5},{opacity:1,scale:1,duration:.3,ease:"back.out(1.4)",stagger:.12},.7).to(".p3",{y:-22,duration:1.1,ease:"sine.inOut",yoyo:true,repeat:2},1.8).to(".p6",{scale:1.16,duration:1,ease:"sine.inOut",yoyo:true,repeat:2},2.15).to(".p1",{y:15,duration:1.3,ease:"sine.inOut",yoyo:true,repeat:1},1.95);window.__timelines["approach-progress"]=tl;</script>
+</template></body></html>

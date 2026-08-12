@@ -1,8 +1,10 @@
 import './FirstSectionPage.css';
+import HeroVideo from '../HeroVideo/HeroVideo';
 
-export default function FirstSectionPage({span,title,description,btnPrimary,btnSecondary,statusCard}) {
+export default function FirstSectionPage({span,title,description,btnPrimary,btnSecondary,statusCard,heroVideo}) {
   return (
     <section className="home-hero">
+        {heroVideo && <HeroVideo className="home-hero-video" {...heroVideo} />}
         <div className="home-grid-bg"></div>
 
         <div className="home-container home-hero-content">

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SliceToTopComponent from "../../components/SliceToTopComponent/SliceToTopComponent";
+import HeroVideo from "../../components/HeroVideo/HeroVideo";
 import "./Contact.css";
 
 const trustBadges = [
@@ -166,18 +167,25 @@ const Contact = () => {
       <main className="contact-page">
         <div className="contact-container">
           <section className="contact-hero">
-            <div className="contact-status">
-              <span></span>
-              <p>Consultas abiertas para empresas</p>
+            <HeroVideo
+              className="contact-hero-video"
+              src="/assets/videos/contact-hero.mp4"
+              poster="/assets/images/digital-network.jpg"
+            />
+            <div className="contact-hero-content">
+              <div className="contact-status">
+                <span></span>
+                <p>Consultas abiertas para empresas</p>
+              </div>
+
+              <h1>Contactá a Dblock</h1>
+
+              <p>
+                Contanos qué necesita tu empresa. Podemos ayudarte con páginas web,
+                SEO, aplicaciones web, aplicaciones móviles, infraestructura digital
+                y mantenimiento técnico.
+              </p>
             </div>
-
-            <h1>Contactá a Dblock</h1>
-
-            <p>
-              Contanos qué necesita tu empresa. Podemos ayudarte con páginas web,
-              SEO, aplicaciones web, aplicaciones móviles, infraestructura digital
-              y mantenimiento técnico.
-            </p>
           </section>
 
           <section className="contact-main-grid">

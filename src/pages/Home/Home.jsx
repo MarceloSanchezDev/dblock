@@ -84,6 +84,7 @@ const Home = () => {
      title={"Desarrollo web, SEO y aplicaciones para empresas"}
      span={"DESARROLLO WEB · SEO · APPS · INFRAESTRUCTURA"}
      statusCard={`SITIOS WEB - SEO TÉCNICO - SISTEMAS A MEDIDA`}
+     heroVideo={{ src: "/assets/videos/home-hero.mp4", poster: "/assets/images/cloud-infrastructure.jpg" }}
      />
 
       <section id="solutions" className="home-section home-solutions">

@@ -1,5 +1,6 @@
 import SliceToTopComponent from "../../components/SliceToTopComponent/SliceToTopComponent";
 import { Link } from "react-router-dom";
+import HeroVideo from "../../components/HeroVideo/HeroVideo";
 import "./Benefits.css";
 
 const metrics = [
@@ -108,6 +109,11 @@ const Benefits = () => {
 
     <main className="benefits-page">
       <section className="benefits-hero">
+        <HeroVideo
+          className="benefits-hero-video"
+          src="/assets/videos/benefits-hero.mp4"
+          poster="/assets/images/digital-network.jpg"
+        />
         <div className="benefits-hero-content">
           <div className="benefits-status">
             <span className="material-symbols-outlined">terminal</span>

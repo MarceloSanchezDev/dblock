@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es-AR" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; margin: 0; overflow: hidden; background: #0e0e0f; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="48" data-width="1920" data-height="1080">
+      <div class="clip" data-composition-id="home-network" data-composition-src="compositions/frames/01-home-network.html" data-start="0" data-duration="6" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div class="clip" data-composition-id="solutions-modules" data-composition-src="compositions/frames/02-solutions-modules.html" data-start="6" data-duration="6" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div class="clip" data-composition-id="web-surface" data-composition-src="compositions/frames/03-web-surface.html" data-start="12" data-duration="6" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div class="clip" data-composition-id="cloud-flow" data-composition-src="compositions/frames/04-cloud-flow.html" data-start="18" data-duration="6" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div class="clip" data-composition-id="automation-sequence" data-composition-src="compositions/frames/05-automation-sequence.html" data-start="24" data-duration="6" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div class="clip" data-composition-id="approach-progress" data-composition-src="compositions/frames/06-approach-progress.html" data-start="30" data-duration="6" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div class="clip" data-composition-id="benefits-balance" data-composition-src="compositions/frames/07-benefits-balance.html" data-start="36" data-duration="6" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div class="clip" data-composition-id="contact-signal" data-composition-src="compositions/frames/08-contact-signal.html" data-start="42" data-duration="6" data-track-index="1" data-width="1920" data-height="1080"></div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

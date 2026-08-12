@@ -82,6 +82,7 @@ const Approach = () => {
      title={" Metodología de trabajo digital"}
      span={"Proceso de trabajo profesional"}
      statusCard={`SISTEMAS A MEDIDA`}
+     heroVideo={{ src: "/assets/videos/approach-hero.mp4", poster: "/assets/images/cybersecurity.jpg" }}
      />
       <section id="lifecycle" className="approach-section approach-lifecycle">
         <div className="approach-container">

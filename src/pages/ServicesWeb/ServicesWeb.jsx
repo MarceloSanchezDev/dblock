@@ -72,6 +72,7 @@ const ServiciosWeb = () => {
          title={"Desarrollo web para empresas"}
          span={"Servicios web para empresas"}
          statusCard={`DESARROLLO WEB - SEO TÉCNICO - APLICACIONES WEB A MEDIDA - TECNOLOGÍAS Y PROCESO DE TRABAJO`}
+         heroVideo={{ src: "/assets/videos/web-hero.mp4", poster: "/assets/images/cloud-infrastructure.jpg" }}
          />
 
       <section

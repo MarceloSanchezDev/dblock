@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es-AR"><head></head><body><template>
+<style>
+@font-face { font-family:"Space Grotesk"; src:local("Arial"); } @font-face { font-family:"JetBrains Mono"; src:local("Courier New"); }
+#root { position:absolute; inset:0; overflow:hidden; background:#0e0e0f; color:#f4f5f7; font-family:"Space Grotesk",sans-serif; }
+.clip { position:absolute; inset:0; }
+.grid { position:absolute; inset:0; background-image:linear-gradient(rgba(31,107,255,.16) 2px,transparent 2px),linear-gradient(90deg,rgba(31,107,255,.16) 2px,transparent 2px); background-size:120px 120px; opacity:.5; }
+.quiet { position:absolute; left:120px; top:210px; width:670px; height:660px; border:3px dashed rgba(244,245,247,.3); border-radius:28px; }
+.field { position:absolute; right:120px; top:160px; width:890px; height:760px; border:3px solid #1f6bff; border-radius:48px; }
+.node { position:absolute; width:94px; height:94px; border-radius:50%; background:#0e0e0f; border:6px solid #61df7d; box-shadow:0 0 0 20px rgba(97,223,125,.13); }
+.node-a { right:220px; top:230px; }.node-b { right:630px; top:400px; border-color:#1f6bff; }.node-c { right:310px; bottom:180px; }
+.line { position:absolute; height:4px; background:#1f6bff; transform-origin:left; }.line-a { right:300px; top:315px; width:360px; transform:rotate(28deg); }.line-b { right:370px; top:565px; width:310px; transform:rotate(-37deg); }
+.label { position:absolute; right:165px; bottom:100px; font:700 25px "JetBrains Mono",monospace; letter-spacing:.14em; color:#61df7d; }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<div data-hf-id="hf-lg23" id="root" data-composition-id="home-network" data-start="0" data-duration="6" data-width="1920" data-height="1080"><section data-hf-id="hf-m099" class="clip" data-start="0" data-duration="6" data-track-index="1"><div data-hf-id="hf-kxq8" class="grid"></div><div data-hf-id="hf-5uq0" class="quiet"></div><div data-hf-id="hf-0ztw" class="field"></div><div data-hf-id="hf-5js6" class="node node-a"></div><div data-hf-id="hf-1lo5" class="node node-b"></div><div data-hf-id="hf-0u0c" class="node node-c"></div><div data-hf-id="hf-zgj6" class="line line-a"></div><div data-hf-id="hf-vif5" class="line line-b"></div><div data-hf-id="hf-e3m9" class="label">RED ACTIVA</div></section></div>
+<script>window.__timelines=window.__timelines||{};const tl=gsap.timeline({paused:true});tl.fromTo(".field",{opacity:0,scale:.92},{opacity:1,scale:1,duration:.7,ease:"expo.out"},.18).fromTo(".node-a",{opacity:0,scale:.65},{opacity:1,scale:1,duration:.55,ease:"back.out(1.4)"},.42).fromTo(".node-b",{opacity:0,scale:.65},{opacity:1,scale:1,duration:.65,ease:"power3.out"},.58).fromTo(".node-c",{opacity:0,scale:.65},{opacity:1,scale:1,duration:.5,ease:"circ.out"},.76).fromTo(".line",{opacity:0},{opacity:1,duration:.55,ease:"power2.out"},.92).to(".node-a",{y:-18,duration:1.3,ease:"sine.inOut",yoyo:true,repeat:2},1.2).to(".node-b",{y:20,duration:1.5,ease:"sine.inOut",yoyo:true,repeat:1},1.2).to(".node-c",{scale:1.14,duration:1.1,ease:"sine.inOut",yoyo:true,repeat:2},1.35);window.__timelines["home-network"]=tl;</script>
+</template></body></html>

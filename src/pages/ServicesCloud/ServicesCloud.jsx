@@ -34,6 +34,7 @@ const ServiciosCloud = () => {
          title={"Servicios cloud, infraestructura web<"}
          span={"Infraestructura digital para empresas"}
          statusCard={`INFRAESTRUCTURA DIGITAL PARA EMPRESAS`}
+         heroVideo={{ src: "/assets/videos/cloud-hero.mp4", poster: "/assets/images/server-room.jpg" }}
          />
       <section
         id="solutions"

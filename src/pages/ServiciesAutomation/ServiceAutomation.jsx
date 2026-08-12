@@ -74,6 +74,7 @@ const ServiciosAutomation = () => {
      title={"Automatización de procesos digitales"}
      span={"Automatización para empresas"}
      statusCard={``}
+     heroVideo={{ src: "/assets/videos/automation-hero.mp4", poster: "/assets/images/automation-hardware.jpg" }}
      />
       <section
         id="capabilities"

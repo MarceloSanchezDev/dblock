@@ -69,7 +69,24 @@
 /* HERO */
 
 .contact-hero {
+  position: relative;
   margin-bottom: 80px;
+  overflow: hidden;
+}
+
+.contact-hero-video {
+  position: absolute;
+  inset: -72px 0;
+  width: 100%;
+  height: calc(100% + 144px);
+  object-fit: cover;
+  opacity: 0.24;
+  pointer-events: none;
+}
+
+.contact-hero-content {
+  position: relative;
+  z-index: 1;
 }
 
 .contact-status {
@@ -119,6 +136,12 @@
   color: var(--ct-muted);
   font-size: 1rem;
   line-height: 1.75;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-hero-video {
+    display: none;
+  }
 }
 
 /* MAIN GRID */
