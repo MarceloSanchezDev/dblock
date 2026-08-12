@@ -1,4 +1,5 @@
 import SliceToTopComponent from "../../components/SliceToTopComponent/SliceToTopComponent";
+import { Link } from "react-router-dom";
 import "./Benefits.css";
 
 const metrics = [
@@ -137,7 +138,7 @@ const Benefits = () => {
 
         <div className="benefits-hero-image">
           <img
-            src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=1400&q=80"
+            src="/assets/images/digital-network.jpg"
             alt="Beneficios de desarrollo web, SEO e infraestructura digital"
           />
         </div>
@@ -206,7 +207,7 @@ const Benefits = () => {
 
       <section id="cta" className="benefits-cta">
         <img
-          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80"
+          src="/assets/images/digital-network.jpg"
           alt="Red digital e infraestructura tecnológica para empresas"
         />
 
@@ -219,19 +220,19 @@ const Benefits = () => {
           </p>
 
           <div className="benefits-cta-buttons">
-            <a
-              href="mailto:contact@dblock.com"
+            <Link
+              to="/contacto"
               className="benefits-cta-primary"
             >
               Solicitar una consulta
-            </a>
+            </Link>
 
-            <a
-              href="mailto:contact@dblock.com"
+            <Link
+              to="/contacto"
               className="benefits-cta-secondary"
             >
               Contactar a Dblock
-            </a>
+            </Link>
           </div>
         </div>
       </section>

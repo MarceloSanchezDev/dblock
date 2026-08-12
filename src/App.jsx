@@ -4,6 +4,7 @@ import "./App.css";
 import Home from "./pages/Home/Home";
 import Nav from "./components/Nav/Nav";
 import Footer from "./components/Footer/Footer";
+import Seo from "./components/Seo/Seo";
 
 import ServiciosWeb from "./pages/ServicesWeb/ServicesWeb";
 import ServiciosCloud from "./pages/ServicesCloud/ServicesCloud";
@@ -16,7 +17,8 @@ import Solutions from "./pages/Solutions/Solutions";
 
 function App() {
   return (
-    <main className="home-page">
+    <div className="home-page">
+      <Seo />
       <Nav />
 
       <Routes>
@@ -34,7 +36,7 @@ function App() {
       </Routes>
 
       <Footer />
-    </main>
+    </div>
   );
 }
 

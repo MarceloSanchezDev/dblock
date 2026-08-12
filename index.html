@@ -6,20 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO principal -->
-  <title>Dblock | Desarrollo Web, SEO y Aplicaciones para Empresas</title>
+  <title>Dblock | Desarrollo Web, SEO y Soluciones Digitales</title>
   <meta
     name="description"
-    content="Dblock desarrolla páginas web, SEO, aplicaciones web, aplicaciones móviles e infraestructura digital para empresas que quieren conseguir más consultas y mejorar su presencia online."
+    content="Dblock desarrolla sitios web, SEO, aplicaciones, cloud y automatización para empresas que buscan crecer digitalmente."
   />
   <meta
     name="keywords"
     content="desarrollo web, páginas web para empresas, SEO, aplicaciones web, aplicaciones móviles, infraestructura digital, Dblock"
   />
   <meta name="author" content="Dblock" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
 
   <!-- Canonical -->
   <link rel="canonical" href="https://dblock.com.ar/" />
+  <link rel="preload" href="/assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
 
   <!-- Favicon PNG -->
   <link rel="icon" type="image/png" href="/logo.png" />
@@ -30,44 +31,59 @@
 
   <!-- Open Graph: Facebook, WhatsApp, LinkedIn -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Dblock | Desarrollo Web, SEO y Aplicaciones para Empresas" />
+  <meta property="og:title" content="Dblock | Desarrollo Web, SEO y Soluciones Digitales" />
   <meta
     property="og:description"
-    content="Creamos páginas web, SEO, aplicaciones web, apps móviles e infraestructura digital para empresas que quieren conseguir más consultas."
+    content="Desarrollo web, SEO, cloud y automatización para empresas que buscan crecer digitalmente."
   />
   <meta property="og:url" content="https://dblock.com.ar/" />
   <meta property="og:site_name" content="Dblock" />
-  <meta property="og:image" content="https://dblock.com.ar/logo.png" />
+  <meta property="og:image" content="https://dblock.com.ar/assets/images/cloud-infrastructure.jpg" />
   <meta property="og:locale" content="es_AR" />
 
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Dblock | Desarrollo Web, SEO y Aplicaciones para Empresas" />
+  <meta name="twitter:title" content="Dblock | Desarrollo Web, SEO y Soluciones Digitales" />
   <meta
     name="twitter:description"
-    content="Desarrollo web, SEO, aplicaciones web, aplicaciones móviles e infraestructura digital para empresas."
+    content="Desarrollo web, SEO, cloud y automatización para empresas que buscan crecer digitalmente."
   />
-  <meta name="twitter:image" content="https://dblock.com.ar/logo.png" />
+  <meta name="twitter:image" content="https://dblock.com.ar/assets/images/cloud-infrastructure.jpg" />
 
-  <!-- Datos estructurados básicos -->
+  <!-- Datos estructurados del sitio y del servicio -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Dblock",
-      "url": "https://dblock.com.ar/",
-      "logo": "https://dblock.com.ar/logo.png",
-      "description": "Dblock desarrolla páginas web, SEO, aplicaciones web, aplicaciones móviles e infraestructura digital para empresas.",
-      "areaServed": {
-        "@type": "Country",
-        "name": "Argentina"
-      },
-      "serviceType": [
-        "Desarrollo web",
-        "SEO",
-        "Aplicaciones web",
-        "Aplicaciones móviles",
-        "Infraestructura digital"
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://dblock.com.ar/#website",
+          "name": "Dblock",
+          "alternateName": "DBLOCK",
+          "url": "https://dblock.com.ar/",
+          "inLanguage": "es-AR"
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://dblock.com.ar/#business",
+          "name": "Dblock",
+          "url": "https://dblock.com.ar/",
+          "logo": "https://dblock.com.ar/logo.png",
+          "email": "ventas@dblock.com.ar",
+          "description": "Dblock desarrolla sitios web, SEO, aplicaciones, cloud y automatización para empresas.",
+          "areaServed": {
+            "@type": "Country",
+            "name": "Argentina"
+          },
+          "serviceType": [
+            "Desarrollo web",
+            "SEO",
+            "Aplicaciones web",
+            "Aplicaciones móviles",
+            "Infraestructura digital",
+            "Automatización de procesos"
+          ]
+        }
       ]
     }
   </script>

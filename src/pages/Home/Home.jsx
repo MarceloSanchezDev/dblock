@@ -1,5 +1,6 @@
 import FirstSectionPage from "../../components/FirstSectionPage/FirstSectionPage";
 import SliceToTopComponent from "../../components/SliceToTopComponent/SliceToTopComponent";
+import { Link } from "react-router-dom";
 import "./Home.css";
 
 const services = [
@@ -115,7 +116,7 @@ const Home = () => {
         <div className="home-container home-case-grid">
           <div className="home-image-card">
             <img
-              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80"
+              src="/assets/images/cloud-infrastructure.jpg"
               alt="Infraestructura digital y servidores para empresas"
             />
 
@@ -246,12 +247,12 @@ const Home = () => {
             página web, SEO, aplicación web, app móvil o infraestructura digital.
           </p>
 
-          <a
-            href="mailto:contact@dblock.com"
+          <Link
+            to="/contacto"
             className="home-btn home-btn-primary"
           >
             Pedir una consulta
-          </a>
+          </Link>
         </div>
       </section>
     </SliceToTopComponent>

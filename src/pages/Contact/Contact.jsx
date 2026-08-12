@@ -49,6 +49,7 @@ const initialFormData = {
 };
 
 const Contact = () => {
+  const [formStartedAt, setFormStartedAt] = useState(() => Date.now());
   const [formData, setFormData] = useState(initialFormData);
   const [fieldErrors, setFieldErrors] = useState({});
   const [submitStatus, setSubmitStatus] = useState("idle");
@@ -136,6 +137,8 @@ const Contact = () => {
           service: formData.service,
           projectType: formData.projectType,
           message: formData.message.trim(),
+          formStartedAt,
+          website: "",
         }),
       });
 
@@ -148,6 +151,7 @@ const Contact = () => {
       setSubmitStatus("success");
       setSubmitMessage("Tu consulta fue enviada correctamente. Te responderemos a la brevedad.");
       setFormData(initialFormData);
+      setFormStartedAt(Date.now());
       setFieldErrors({});
     } catch (error) {
       setSubmitStatus("error");
@@ -231,6 +235,16 @@ const Contact = () => {
 
             <section className="contact-form-panel">
               <form className="contact-form" onSubmit={handleSubmit} noValidate>
+                <div className="contact-honeypot" aria-hidden="true">
+                  <label htmlFor="website">Sitio web</label>
+                  <input
+                    id="website"
+                    name="website"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </div>
                 <div className="contact-form-grid">
                   <div className="contact-field">
                     <label htmlFor="fullName">Nombre y apellido</label>
@@ -241,6 +255,7 @@ const Contact = () => {
                       value={formData.fullName}
                       onChange={handleInputChange}
                       placeholder="Escribí tu nombre"
+                      maxLength={120}
                       autoComplete="name"
                       aria-invalid={Boolean(fieldErrors.fullName)}
                     />
@@ -258,6 +273,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="tuemail@empresa.com"
+                      maxLength={254}
                       autoComplete="email"
                       aria-invalid={Boolean(fieldErrors.email)}
                     />
@@ -275,6 +291,7 @@ const Contact = () => {
                       value={formData.company}
                       onChange={handleInputChange}
                       placeholder="Nombre de tu empresa"
+                      maxLength={160}
                       autoComplete="organization"
                     />
                   </div>
@@ -337,6 +354,7 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       placeholder="Contanos qué necesitás, cuál es tu objetivo y si ya tenés una web o proyecto en marcha."
+                      maxLength={3000}
                       aria-invalid={Boolean(fieldErrors.message)}
                     />
                     {fieldErrors.message && (
@@ -384,7 +402,7 @@ const Contact = () => {
 
             <div className="contact-map-card">
               <img
-                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80"
+                src="/assets/images/digital-network.jpg"
                 alt="Servicios digitales para empresas en Buenos Aires Argentina"
               />
 

@@ -66,7 +66,7 @@ const featuredSolutions = [
     useCase: "Ideal para: empresas que necesitan mejorar su presencia online",
     color: "blue",
     image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1400&q=80",
+      "/assets/images/cloud-infrastructure.jpg",
     path: "/servicios-web",
   },
   {
@@ -78,7 +78,7 @@ const featuredSolutions = [
     useCase: "Ideal para: empresas que quieren escalar o mejorar procesos",
     color: "green",
     image:
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1400&q=80",
+      "/assets/images/cybersecurity.jpg",
     path: "/servicios-cloud",
   },
 ];

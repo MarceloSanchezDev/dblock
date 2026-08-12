@@ -1,5 +1,6 @@
 import FirstSectionPage from "../../components/FirstSectionPage/FirstSectionPage";
 import SliceToTopComponent from "../../components/SliceToTopComponent/SliceToTopComponent";
+import { Link } from "react-router-dom";
 import "./ServiciosWeb.css";
 
 const capabilities = [
@@ -201,12 +202,12 @@ const ServiciosWeb = () => {
               medida.
             </p>
 
-            <a
-              href="mailto:contact@dblock.com"
+            <Link
+              to="/contacto"
               className="servicios-web-cta-button"
             >
               Pedir una consulta
-            </a>
+            </Link>
           </div>
         </div>
       </section>

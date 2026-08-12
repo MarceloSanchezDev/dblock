@@ -1,6 +1,8 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = process.env.RESEND_API_KEY
+  ? new Resend(process.env.RESEND_API_KEY)
+  : null;
 
 const CONTACT_TO_EMAIL =
   process.env.CONTACT_TO_EMAIL || "ventas@dblock.com.ar";
@@ -8,14 +10,70 @@ const CONTACT_TO_EMAIL =
 const CONTACT_FROM_EMAIL =
   process.env.CONTACT_FROM_EMAIL || "Dblock <contacto@dblock.com.ar>";
 
+const MAX_FIELD_LENGTHS = {
+  fullName: 120,
+  email: 254,
+  company: 160,
+  service: 100,
+  projectType: 100,
+  message: 3000,
+};
+
+const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
+const RATE_LIMIT_MAX_REQUESTS = 5;
+const MIN_FORM_COMPLETION_TIME_MS = 3000;
+const requestLog = new Map();
+
+const allowedServices = new Set([
+  "Página web para empresa",
+  "SEO y posicionamiento web",
+  "Aplicación web a medida",
+  "Aplicación móvil",
+  "Infraestructura digital",
+  "Mantenimiento o soporte técnico",
+]);
+
+const allowedProjectTypes = new Set([
+  "A definir",
+  "Proyecto inicial",
+  "Proyecto avanzado",
+  "Mantenimiento mensual",
+]);
+
 function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-function sanitizeText(value) {
+function sanitizeText(value, maxLength) {
   return String(value || "")
+    .replace(/[\u0000-\u001F\u007F]/g, " ")
     .trim()
-    .replace(/[<>]/g, "");
+    .replace(/[<>]/g, "")
+    .slice(0, maxLength);
+}
+
+function getClientIp(request) {
+  const forwardedFor =
+    request.headers["x-vercel-forwarded-for"] ||
+    request.headers["x-forwarded-for"];
+
+  if (typeof forwardedFor === "string") {
+    return forwardedFor.split(",")[0].trim();
+  }
+
+  return request.socket?.remoteAddress || "unknown";
+}
+
+function isRateLimited(ip, now) {
+  const windowStart = now - RATE_LIMIT_WINDOW_MS;
+  const timestamps = (requestLog.get(ip) || []).filter(
+    (timestamp) => timestamp > windowStart,
+  );
+
+  timestamps.push(now);
+  requestLog.set(ip, timestamps);
+
+  return timestamps.length > RATE_LIMIT_MAX_REQUESTS;
 }
 
 function createEmailHtml(data) {
@@ -53,13 +111,47 @@ export default async function handler(request, response) {
 
   try {
     const body = request.body || {};
+    const now = Date.now();
+    const clientIp = getClientIp(request);
 
-    const fullName = sanitizeText(body.fullName);
-    const email = sanitizeText(body.email);
-    const company = sanitizeText(body.company);
-    const service = sanitizeText(body.service);
-    const projectType = sanitizeText(body.projectType);
-    const message = sanitizeText(body.message);
+    if (body.website) {
+      return response.status(400).json({
+        ok: false,
+        message: "No se pudo enviar la consulta.",
+      });
+    }
+
+    const formStartedAt = Number(body.formStartedAt);
+
+    if (
+      !Number.isFinite(formStartedAt) ||
+      formStartedAt > now ||
+      now - formStartedAt < MIN_FORM_COMPLETION_TIME_MS
+    ) {
+      return response.status(400).json({
+        ok: false,
+        message: "Esperá unos segundos antes de enviar la consulta.",
+      });
+    }
+
+    if (isRateLimited(clientIp, now)) {
+      response.setHeader("Retry-After", String(RATE_LIMIT_WINDOW_MS / 1000));
+
+      return response.status(429).json({
+        ok: false,
+        message: "Recibimos demasiados intentos. Esperá unos minutos e intentá de nuevo.",
+      });
+    }
+
+    const fullName = sanitizeText(body.fullName, MAX_FIELD_LENGTHS.fullName);
+    const email = sanitizeText(body.email, MAX_FIELD_LENGTHS.email);
+    const company = sanitizeText(body.company, MAX_FIELD_LENGTHS.company);
+    const service = sanitizeText(body.service, MAX_FIELD_LENGTHS.service);
+    const projectType = sanitizeText(
+      body.projectType,
+      MAX_FIELD_LENGTHS.projectType,
+    );
+    const message = sanitizeText(body.message, MAX_FIELD_LENGTHS.message);
 
     if (!fullName || fullName.length < 3) {
       return response.status(400).json({
@@ -75,14 +167,14 @@ export default async function handler(request, response) {
       });
     }
 
-    if (!service) {
+    if (!allowedServices.has(service)) {
       return response.status(400).json({
         ok: false,
         message: "Seleccioná un servicio.",
       });
     }
 
-    if (!projectType) {
+    if (!allowedProjectTypes.has(projectType)) {
       return response.status(400).json({
         ok: false,
         message: "Seleccioná un tipo de proyecto.",
@@ -104,6 +196,15 @@ export default async function handler(request, response) {
       projectType,
       message,
     };
+
+    if (!resend) {
+      console.error("RESEND_API_KEY is not configured.");
+
+      return response.status(503).json({
+        ok: false,
+        message: "El formulario no está disponible temporalmente.",
+      });
+    }
 
     const { data, error } = await resend.emails.send({
       from: CONTACT_FROM_EMAIL,

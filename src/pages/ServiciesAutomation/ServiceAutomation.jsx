@@ -1,5 +1,6 @@
 import FirstSectionPage from "../../components/FirstSectionPage/FirstSectionPage";
 import SliceToTopComponent from "../../components/SliceToTopComponent/SliceToTopComponent";
+import { Link } from "react-router-dom";
 import "./ServiciosAutomation.css";
 
 const capabilities = [
@@ -132,7 +133,7 @@ const ServiciosAutomation = () => {
 
             <article className="servicios-automation-image-card">
               <img
-                src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80"
+                src="/assets/images/automation-hardware.jpg"
                 alt="Automatización de procesos digitales para empresas"
               />
 
@@ -238,12 +239,12 @@ const ServiciosAutomation = () => {
               </div>
 
               <div>
-                <a
-                  href="mailto:contact@dblock.com"
+                <Link
+                  to="/contacto"
                   className="servicios-automation-btn servicios-automation-btn-primary"
                 >
                   Pedir una consulta
-                </a>
+                </Link>
               </div>
             </div>
           </div>

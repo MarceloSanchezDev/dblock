@@ -1,5 +1,6 @@
 import FirstSectionPage from "../../components/FirstSectionPage/FirstSectionPage";
 import SliceToTopComponent from "../../components/SliceToTopComponent/SliceToTopComponent";
+import { Link } from "react-router-dom";
 import "./Approach.css";
 
 const lifecycleSteps = [
@@ -117,7 +118,7 @@ const Approach = () => {
           <div className="approach-flow-image-wrapper">
             <div className="approach-flow-image">
               <img
-                src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1400&q=80"
+                src="/assets/images/cybersecurity.jpg"
                 alt="Estrategia digital, SEO y desarrollo web para empresas"
               />
             </div>
@@ -165,9 +166,9 @@ const Approach = () => {
               solución digital: web, SEO, aplicación o infraestructura.
             </p>
 
-            <a href="mailto:contact@dblock.com" className="approach-cta-button">
+            <Link to="/contacto" className="approach-cta-button">
               Solicitar una consulta
-            </a>
+            </Link>
 
             <div className="approach-cta-status">
               <span></span>

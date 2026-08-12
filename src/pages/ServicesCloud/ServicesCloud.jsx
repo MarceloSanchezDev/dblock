@@ -1,6 +1,7 @@
 import "./ServiciosCloud.css";
 import FirstSectionPage from "../../components/FirstSectionPage/FirstSectionPage";
 import SliceToTopComponent from "../../components/SliceToTopComponent/SliceToTopComponent";
+import { Link } from "react-router-dom";
 
 const architectureItems = [
   "HOSTING Y SERVIDORES",
@@ -47,7 +48,7 @@ const ServiciosCloud = () => {
           <div className="servicios-cloud-bento">
             <article className="servicios-cloud-card servicios-cloud-threat-card">
               <img
-                src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1400&q=80"
+                src="/assets/images/cybersecurity.jpg"
                 alt="Seguridad técnica e infraestructura digital para empresas"
               />
 
@@ -152,7 +153,7 @@ const ServiciosCloud = () => {
             </div>
 
             <img
-              src="https://images.unsplash.com/photo-1562408590-e32931084e23?auto=format&fit=crop&w=1400&q=80"
+              src="/assets/images/server-room.jpg"
               alt="Servidor y monitoreo de infraestructura cloud"
             />
 
@@ -185,12 +186,12 @@ const ServiciosCloud = () => {
                 web.
               </p>
 
-              <a
-                href="mailto:contact@dblock.com"
+              <Link
+                to="/contacto"
                 className="servicios-cloud-cta-button"
               >
                 Pedir consulta técnica
-              </a>
+              </Link>
             </div>
 
             <span>DBLOCK CLOUD</span>
