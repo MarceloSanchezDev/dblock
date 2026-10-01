@@ -5,15 +5,15 @@ import "./nav.css";
 const navLinks = [
   {
     path: "/soluciones",
-    label: "Soluciones",
+    label: "Software a medida",
   },
   {
     path: "/servicios-web",
-    label: "Servicios web",
+    label: "Desarrollo web",
   },
   {
     path: "/servicios-cloud",
-    label: "Cloud",
+    label: "Infraestructura",
   },
   {
     path: "/servicios-automatizacion",
@@ -25,7 +25,7 @@ const navLinks = [
   },
   {
     path: "/beneficios",
-    label: "Beneficios",
+    label: "Cómo trabajamos",
   },
 ];
 
@@ -82,7 +82,7 @@ const Nav = () => {
           className="home-navbar-button"
           onClick={handleCloseMenu}
         >
-          Solicitar consulta
+          Hablemos
         </Link>
       </div>
     </nav>

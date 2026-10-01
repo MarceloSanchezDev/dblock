@@ -6,9 +6,9 @@ const socialImage = `${siteUrl}/assets/images/cloud-infrastructure.jpg`;
 
 const pageMetadata = {
   "/": {
-    title: "Dblock | Desarrollo Web, SEO y Soluciones Digitales",
+    title: "Dblock | Software a Medida y Automatización para Empresas",
     description:
-      "Dblock desarrolla sitios web, SEO, aplicaciones, cloud y automatización para empresas que buscan crecer digitalmente.",
+      "Dblock desarrolla software a medida, automatizaciones, aplicaciones y soluciones digitales para empresas en Argentina.",
   },
   "/soluciones": {
     title: "Soluciones Digitales para Empresas | Dblock",

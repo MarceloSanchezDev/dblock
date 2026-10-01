@@ -24,28 +24,24 @@ const trustBadges = [
   },
 ];
 
-const budgetOptions = [
-  "A definir",
-  "Proyecto inicial",
-  "Proyecto avanzado",
-  "Mantenimiento mensual",
-];
-
 const serviceOptions = [
-  "Página web para empresa",
-  "SEO y posicionamiento web",
-  "Aplicación web a medida",
+  "Sistema de gestión o software a medida",
+  "Automatización de procesos",
+  "Aplicación web",
   "Aplicación móvil",
-  "Infraestructura digital",
-  "Mantenimiento o soporte técnico",
+  "Ecommerce o portal B2B",
+  "Integraciones entre sistemas",
+  "SEO y crecimiento digital",
+  "Infraestructura y soporte",
+  "No estoy seguro",
 ];
 
 const initialFormData = {
   fullName: "",
   email: "",
   company: "",
+  phone: "",
   service: "",
-  projectType: "A definir",
   message: "",
 };
 
@@ -72,18 +68,6 @@ const Contact = () => {
     }));
   };
 
-  const handleProjectTypeChange = (projectType) => {
-    setFormData((currentData) => ({
-      ...currentData,
-      projectType,
-    }));
-
-    setFieldErrors((currentErrors) => ({
-      ...currentErrors,
-      projectType: "",
-    }));
-  };
-
   const validateForm = () => {
     const errors = {};
 
@@ -97,10 +81,6 @@ const Contact = () => {
 
     if (!formData.service) {
       errors.service = "Seleccioná un servicio.";
-    }
-
-    if (!formData.projectType) {
-      errors.projectType = "Seleccioná un tipo de proyecto.";
     }
 
     if (formData.message.trim().length < 10) {
@@ -135,8 +115,8 @@ const Contact = () => {
           fullName: formData.fullName.trim(),
           email: formData.email.trim(),
           company: formData.company.trim(),
+          phone: formData.phone.trim(),
           service: formData.service,
-          projectType: formData.projectType,
           message: formData.message.trim(),
           formStartedAt,
           website: "",
@@ -181,9 +161,8 @@ const Contact = () => {
               <h1>Contactá a Dblock</h1>
 
               <p>
-                Contanos qué necesita tu empresa. Podemos ayudarte con páginas web,
-                SEO, aplicaciones web, aplicaciones móviles, infraestructura digital
-                y mantenimiento técnico.
+                Contanos cómo trabaja hoy tu empresa y qué proceso quieren mejorar.
+                Analizamos el problema antes de proponer una solución.
               </p>
             </div>
           </section>
@@ -305,7 +284,21 @@ const Contact = () => {
                   </div>
 
                   <div className="contact-field">
-                    <label htmlFor="service">Servicio que necesitás</label>
+                    <label htmlFor="phone">Teléfono <span>(opcional)</span></label>
+                    <input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      placeholder="Código de área y número"
+                      maxLength={60}
+                      autoComplete="tel"
+                    />
+                  </div>
+
+                  <div className="contact-field">
+                    <label htmlFor="service">¿Qué querés mejorar?</label>
                     <select
                       id="service"
                       name="service"
@@ -329,39 +322,14 @@ const Contact = () => {
                   </div>
 
                   <div className="contact-field contact-full">
-                    <label>Tipo de proyecto</label>
-
-                    <div className="contact-budget-grid">
-                      {budgetOptions.map((option) => (
-                        <button
-                          className={
-                            formData.projectType === option ? "active" : ""
-                          }
-                          type="button"
-                          key={option}
-                          onClick={() => handleProjectTypeChange(option)}
-                        >
-                          {option}
-                        </button>
-                      ))}
-                    </div>
-
-                    {fieldErrors.projectType && (
-                      <p className="contact-field-error">
-                        {fieldErrors.projectType}
-                      </p>
-                    )}
-                  </div>
-
-                  <div className="contact-field contact-full">
-                    <label htmlFor="message">Mensaje</label>
+                    <label htmlFor="message">Contanos cómo trabajan hoy o qué problema quieren resolver</label>
                     <textarea
                       id="message"
                       name="message"
                       rows="4"
                       value={formData.message}
                       onChange={handleInputChange}
-                      placeholder="Contanos qué necesitás, cuál es tu objetivo y si ya tenés una web o proyecto en marcha."
+                      placeholder="Por ejemplo: recibimos pedidos por WhatsApp y después los cargamos a mano en una planilla."
                       maxLength={3000}
                       aria-invalid={Boolean(fieldErrors.message)}
                     />
@@ -385,7 +353,7 @@ const Contact = () => {
                   type="submit"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Enviando consulta..." : "Enviar consulta"}
+                  {isSubmitting ? "Analizando consulta..." : "Analizar mi proyecto"}
                 </button>
               </form>
             </section>

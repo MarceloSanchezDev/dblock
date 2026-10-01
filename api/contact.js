@@ -14,8 +14,8 @@ const MAX_FIELD_LENGTHS = {
   fullName: 120,
   email: 254,
   company: 160,
+  phone: 60,
   service: 100,
-  projectType: 100,
   message: 3000,
 };
 
@@ -25,19 +25,15 @@ const MIN_FORM_COMPLETION_TIME_MS = 3000;
 const requestLog = new Map();
 
 const allowedServices = new Set([
-  "Página web para empresa",
-  "SEO y posicionamiento web",
-  "Aplicación web a medida",
+  "Sistema de gestión o software a medida",
+  "Automatización de procesos",
+  "Aplicación web",
   "Aplicación móvil",
-  "Infraestructura digital",
-  "Mantenimiento o soporte técnico",
-]);
-
-const allowedProjectTypes = new Set([
-  "A definir",
-  "Proyecto inicial",
-  "Proyecto avanzado",
-  "Mantenimiento mensual",
+  "Ecommerce o portal B2B",
+  "Integraciones entre sistemas",
+  "SEO y crecimiento digital",
+  "Infraestructura y soporte",
+  "No estoy seguro",
 ]);
 
 function isValidEmail(email) {
@@ -92,8 +88,8 @@ function createEmailHtml(data) {
       <p><strong>Nombre:</strong> ${data.fullName}</p>
       <p><strong>Email:</strong> ${data.email}</p>
       <p><strong>Empresa:</strong> ${data.company || "No especificada"}</p>
+      <p><strong>Teléfono:</strong> ${data.phone || "No especificado"}</p>
       <p><strong>Servicio:</strong> ${data.service}</p>
-      <p><strong>Tipo de proyecto:</strong> ${data.projectType}</p>
 
       <h2>Mensaje</h2>
       <p style="white-space: pre-line;">${data.message}</p>
@@ -146,11 +142,8 @@ export default async function handler(request, response) {
     const fullName = sanitizeText(body.fullName, MAX_FIELD_LENGTHS.fullName);
     const email = sanitizeText(body.email, MAX_FIELD_LENGTHS.email);
     const company = sanitizeText(body.company, MAX_FIELD_LENGTHS.company);
+    const phone = sanitizeText(body.phone, MAX_FIELD_LENGTHS.phone);
     const service = sanitizeText(body.service, MAX_FIELD_LENGTHS.service);
-    const projectType = sanitizeText(
-      body.projectType,
-      MAX_FIELD_LENGTHS.projectType,
-    );
     const message = sanitizeText(body.message, MAX_FIELD_LENGTHS.message);
 
     if (!fullName || fullName.length < 3) {
@@ -174,13 +167,6 @@ export default async function handler(request, response) {
       });
     }
 
-    if (!allowedProjectTypes.has(projectType)) {
-      return response.status(400).json({
-        ok: false,
-        message: "Seleccioná un tipo de proyecto.",
-      });
-    }
-
     if (!message || message.length < 10) {
       return response.status(400).json({
         ok: false,
@@ -192,8 +178,8 @@ export default async function handler(request, response) {
       fullName,
       email,
       company,
+      phone,
       service,
-      projectType,
       message,
     };
 

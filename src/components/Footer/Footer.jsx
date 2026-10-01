@@ -6,29 +6,29 @@ const currentYear = new Date().getFullYear();
 const Footer = () => {
   return (
     <footer className="home-footer">
-      <div>
+      <div className="home-footer-brand">
         <h2>DBLOCK</h2>
 
         <p>
-          Desarrollo web, SEO, aplicaciones e infraestructura digital para
-          empresas.
+          Software, automatización y soluciones digitales para empresas.
         </p>
       </div>
 
-      <div>
+      <nav className="home-footer-links" aria-label="Servicios">
         <h4>Servicios</h4>
-        <Link to="/servicios-web">Páginas web para empresas</Link>
-        <Link to="/servicios-cloud">Cloud e infraestructura</Link>
+        <Link to="/soluciones">Software a medida</Link>
         <Link to="/servicios-automatizacion">Automatización de procesos</Link>
-      </div>
+        <Link to="/servicios-web">Desarrollo web y aplicaciones</Link>
+        <Link to="/servicios-cloud">Cloud e infraestructura</Link>
+      </nav>
 
-      <div>
+      <nav className="home-footer-links" aria-label="Empresa">
         <h4>Empresa</h4>
         <Link to="/soluciones">Soluciones digitales</Link>
         <Link to="/beneficios">Beneficios</Link>
         <Link to="/acerca-de-nosotros">Nosotros</Link>
         <Link to="/contacto">Contacto</Link>
-      </div>
+      </nav>
 
       <div className="home-footer-status">
         <span></span>
