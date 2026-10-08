@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import SliceToTopComponent from "../../components/SliceToTopComponent/SliceToTopComponent";
 import HeroVideo from "../../components/HeroVideo/HeroVideo";
+import { trackEvent } from "../../lib/analytics";
 import "./Home.css";
 
 const services = [
@@ -69,7 +70,7 @@ function FadeContent({ children, className = "" }) {
   return <div ref={elementRef} className={`db-fade ${isVisible ? "is-visible" : ""} ${className}`}>{children}</div>;
 }
 
-function MagneticLink({ to, href, className, children }) {
+function MagneticLink({ to, href, className, children, eventName, eventParameters }) {
   const elementRef = useRef(null);
 
   const handleMove = (event) => {
@@ -84,7 +85,13 @@ function MagneticLink({ to, href, className, children }) {
     elementRef.current.style.transform = "translate(0, 0)";
   };
 
-  const props = { ref: elementRef, className: `${className} db-magnetic`, onMouseMove: handleMove, onMouseLeave: handleLeave };
+  const props = {
+    ref: elementRef,
+    className: `${className} db-magnetic`,
+    onMouseMove: handleMove,
+    onMouseLeave: handleLeave,
+    onClick: () => eventName && trackEvent(eventName, eventParameters),
+  };
   return to ? <Link {...props} to={to}>{children}</Link> : <a {...props} href={href}>{children}</a>;
 }
 
@@ -98,7 +105,7 @@ function SpotlightCard({ service, index }) {
 
   return <article ref={cardRef} className="db-service db-spotlight" onMouseMove={handleMove}>
     <div className="db-service-top"><span className="material-symbols-outlined">{service.icon}</span><small>0{index + 1}</small></div>
-    <h3>{service.title}</h3><p>{service.text}</p><span className="db-service-examples">{service.examples}</span><Link to={service.path}>Ver servicio <span aria-hidden="true">→</span></Link>
+    <h3>{service.title}</h3><p>{service.text}</p><span className="db-service-examples">{service.examples}</span><Link to={service.path} onClick={() => trackEvent("service_click", { service_name: service.title })}>Ver servicio <span aria-hidden="true">→</span></Link>
   </article>;
 }
 
@@ -128,7 +135,7 @@ export default function Home() {
             <p className="db-kicker db-shiny"><span /> TECNOLOGÍA PARA EMPRESAS</p>
             <h1>Software y automatización para que tu empresa <em>trabaje mejor.</em></h1>
             <p className="db-lead">Desarrollamos sistemas, aplicaciones y soluciones digitales que ordenan procesos, centralizan información y reducen trabajo manual.</p>
-            <div className="db-actions"><MagneticLink className="db-button db-button-main" to="/contacto">Contanos qué proceso querés mejorar <span aria-hidden="true">→</span></MagneticLink><MagneticLink className="db-button db-button-quiet" href="#servicios">Conocer nuestros servicios</MagneticLink></div>
+            <div className="db-actions"><MagneticLink className="db-button db-button-main" to="/contacto" eventName="cta_click" eventParameters={{ cta_name: "hero_mejorar_proceso", cta_location: "hero" }}>Contanos qué proceso querés mejorar <span aria-hidden="true">→</span></MagneticLink><MagneticLink className="db-button db-button-quiet" href="#servicios" eventName="cta_click" eventParameters={{ cta_name: "hero_conocer_servicios", cta_location: "hero" }}>Conocer nuestros servicios</MagneticLink></div>
             <dl className="db-hero-facts" aria-label="Capacidades de Dblock"><div><dt>01</dt><dd>Software a medida</dd></div><div><dt>02</dt><dd>Automatización</dd></div><div><dt>03</dt><dd>Soporte continuo</dd></div></dl>
           </div>
         </section>
@@ -146,7 +153,7 @@ export default function Home() {
         <FadeContent><section className="db-section db-process"><div className="home-container"><div className="db-section-heading"><p className="db-eyebrow">CÓMO TRABAJAMOS</p><h2>Un proceso claro, desde el problema hasta la evolución.</h2></div><ol>{process.map(([number, title, text]) => <li key={number}><span>{number}</span><h3>{title}</h3><p>{text}</p></li>)}</ol></div></section></FadeContent>
 
         <section className="db-tech"><div className="home-container"><p className="db-eyebrow">CÓMO LO HACEMOS</p><div><h2>Tecnología que acompaña al negocio.</h2><p>React · Node.js · TypeScript · MySQL · MongoDB · Docker · Vercel · React Native · APIs REST</p></div></div></section>
-        <FadeContent><section className="db-final"><div className="home-container"><p className="db-eyebrow">EMPECEMOS POR ENTENDERLO</p><h2>¿Hay un proceso de tu empresa que quieras mejorar?</h2><p>No hace falta que sepas qué tecnología necesitás. Contanos cómo trabajan hoy y analizamos qué se puede resolver.</p><MagneticLink className="db-button db-button-main" to="/contacto">Hablemos de tu proyecto <span aria-hidden="true">→</span></MagneticLink></div></section></FadeContent>
+        <FadeContent><section className="db-final"><div className="home-container"><p className="db-eyebrow">EMPECEMOS POR ENTENDERLO</p><h2>¿Hay un proceso de tu empresa que quieras mejorar?</h2><p>No hace falta que sepas qué tecnología necesitás. Contanos cómo trabajan hoy y analizamos qué se puede resolver.</p><MagneticLink className="db-button db-button-main" to="/contacto" eventName="cta_click" eventParameters={{ cta_name: "final_hablemos_proyecto", cta_location: "final_cta" }}>Hablemos de tu proyecto <span aria-hidden="true">→</span></MagneticLink></div></section></FadeContent>
       </main>
     </SliceToTopComponent>
   );

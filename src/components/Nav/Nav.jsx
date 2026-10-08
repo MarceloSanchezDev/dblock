@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { trackEvent } from "../../lib/analytics";
 import "./nav.css";
 
 const navLinks = [
@@ -71,7 +72,10 @@ const Nav = () => {
       >
         <div className="home-navbar-links">
           {navLinks.map((link) => (
-            <Link key={link.path} to={link.path} onClick={handleCloseMenu}>
+            <Link key={link.path} to={link.path} onClick={() => {
+              trackEvent("navigation_click", { navigation_label: link.label });
+              handleCloseMenu();
+            }}>
               {link.label}
             </Link>
           ))}
@@ -80,7 +84,10 @@ const Nav = () => {
         <Link
           to="/contacto"
           className="home-navbar-button"
-          onClick={handleCloseMenu}
+          onClick={() => {
+            trackEvent("cta_click", { cta_name: "nav_hablemos", cta_location: "navigation" });
+            handleCloseMenu();
+          }}
         >
           Hablemos
         </Link>

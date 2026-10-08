@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import SliceToTopComponent from "../../components/SliceToTopComponent/SliceToTopComponent";
 import HeroVideo from "../../components/HeroVideo/HeroVideo";
+import { trackEvent } from "../../lib/analytics";
 import "./Contact.css";
 
 const trustBadges = [
@@ -51,6 +52,7 @@ const Contact = () => {
   const [fieldErrors, setFieldErrors] = useState({});
   const [submitStatus, setSubmitStatus] = useState("idle");
   const [submitMessage, setSubmitMessage] = useState("");
+  const hasTrackedFormStart = useRef(false);
 
   const isSubmitting = submitStatus === "loading";
 
@@ -66,6 +68,17 @@ const Contact = () => {
       ...currentErrors,
       [name]: "",
     }));
+
+    if (name === "service" && value) {
+      trackEvent("contact_service_selected", { service_type: value });
+    }
+  };
+
+  const handleFormFocus = () => {
+    if (hasTrackedFormStart.current) return;
+
+    hasTrackedFormStart.current = true;
+    trackEvent("contact_form_start");
   };
 
   const validateForm = () => {
@@ -98,6 +111,7 @@ const Contact = () => {
     setSubmitMessage("");
 
     if (Object.keys(errors).length > 0) {
+      trackEvent("form_error", { error_count: Object.keys(errors).length });
       setSubmitStatus("error");
       setSubmitMessage("Revisá los campos marcados antes de enviar.");
       return;
@@ -130,11 +144,13 @@ const Contact = () => {
       }
 
       setSubmitStatus("success");
+      trackEvent("generate_lead", { service_type: formData.service });
       setSubmitMessage("Tu consulta fue enviada correctamente. Te responderemos a la brevedad.");
       setFormData(initialFormData);
       setFormStartedAt(Date.now());
       setFieldErrors({});
     } catch (error) {
+      trackEvent("contact_submit_error");
       setSubmitStatus("error");
       setSubmitMessage(
         error.message || "Ocurrió un error al enviar la consulta."
@@ -221,7 +237,7 @@ const Contact = () => {
             </aside>
 
             <section className="contact-form-panel">
-              <form className="contact-form" onSubmit={handleSubmit} noValidate>
+              <form className="contact-form" onSubmit={handleSubmit} onFocusCapture={handleFormFocus} noValidate>
                 <div className="contact-honeypot" aria-hidden="true">
                   <label htmlFor="website">Sitio web</label>
                   <input

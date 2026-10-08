@@ -2,6 +2,17 @@
 
 Sitio corporativo desarrollado con React, Vite y una función serverless de Vercel para el formulario de contacto.
 
+## Analítica
+
+La instrumentación de GA4 y Microsoft Clarity está incluida, pero se mantiene inactiva hasta configurar los IDs públicos. Copiá `.env.example` como `.env.local` y completá:
+
+```bash
+VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+VITE_CLARITY_PROJECT_ID=xxxxxxxxxx
+```
+
+Se registran vistas de página, clics en navegación y CTA, interacción con servicios, inicio y envío exitoso del formulario. Nunca se envían a las herramientas de analítica los datos personales ni el texto de la consulta.
+
 ## Desarrollo local
 
 1. Instalá dependencias con `npm ci`.

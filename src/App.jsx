@@ -5,6 +5,7 @@ import Home from "./pages/Home/Home";
 import Nav from "./components/Nav/Nav";
 import Footer from "./components/Footer/Footer";
 import Seo from "./components/Seo/Seo";
+import Analytics from "./components/Analytics/Analytics";
 
 import ServiciosWeb from "./pages/ServicesWeb/ServicesWeb";
 import ServiciosCloud from "./pages/ServicesCloud/ServicesCloud";
@@ -19,6 +20,7 @@ function App() {
   return (
     <div className="home-page">
       <Seo />
+      <Analytics />
       <Nav />
 
       <Routes>
