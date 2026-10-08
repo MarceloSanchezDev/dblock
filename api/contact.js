@@ -4,8 +4,10 @@ const resend = process.env.RESEND_API_KEY
   ? new Resend(process.env.RESEND_API_KEY)
   : null;
 
-const CONTACT_TO_EMAIL =
-  process.env.CONTACT_TO_EMAIL || "ventas@dblock.com.ar";
+const CONTACT_RECIPIENTS = [...new Set([
+  process.env.CONTACT_TO_EMAIL || "ventas@dblock.com.ar",
+  "marcelo.sanchez@dblock.com.ar",
+])];
 
 const CONTACT_FROM_EMAIL =
   process.env.CONTACT_FROM_EMAIL || "Dblock <contacto@dblock.com.ar>";
@@ -194,7 +196,7 @@ export default async function handler(request, response) {
 
     const { data, error } = await resend.emails.send({
       from: CONTACT_FROM_EMAIL,
-      to: [CONTACT_TO_EMAIL],
+      to: CONTACT_RECIPIENTS,
       replyTo: email,
       subject: `Nueva consulta de ${fullName} - Dblock`,
       html: createEmailHtml(contactData),

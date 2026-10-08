@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es-AR" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Dblock · Tecnología que conecta</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; margin: 0; overflow: hidden; background: #08101b; }
+      #ig-root { position: relative; width: 1080px; height: 1920px; overflow: hidden; color: #f4f7ff; font-family: "Space Grotesk", Arial, sans-serif; }
+      .scene { position: absolute; inset: 0; overflow: hidden; }
+      .grid { position: absolute; inset: 0; opacity: .42; background-image: linear-gradient(rgba(31,107,255,.22) 1px, transparent 1px), linear-gradient(90deg, rgba(31,107,255,.22) 1px, transparent 1px); background-size: 108px 108px; }
+      .glow { position: absolute; width: 720px; height: 720px; border-radius: 50%; background: radial-gradient(circle, rgba(17,127,255,.42), rgba(4,35,89,.12) 42%, transparent 68%); filter: blur(4px); }
+      .brand { display: none; }
+      .brand::before { content: ""; display: inline-block; width: 35px; height: 35px; margin-right: 14px; border: 7px solid #1f6bff; border-right-width: 13px; border-radius: 5px 22px 22px 5px; vertical-align: -4px; }
+      .eyebrow { position: absolute; left: 88px; top: 218px; color: #64dfff; font: 600 22px "JetBrains Mono", monospace; letter-spacing: 3px; }
+      .headline { position: absolute; left: 86px; right: 74px; margin: 0; font-weight: 800; font-size: 104px; line-height: .95; letter-spacing: -4px; }
+      .accent { color: #20c8ff; }
+      .support { position: absolute; left: 90px; right: 90px; font: 500 31px/1.25 "JetBrains Mono", monospace; color: #bed5ff; }
+      .circuit { position: absolute; left: 72px; right: 72px; bottom: 135px; height: 600px; }
+      .circuit svg { width: 100%; height: 100%; overflow: visible; }
+      .route { fill: none; stroke: #25cfff; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; opacity: .8; }
+      .route.dim { opacity: .3; stroke-dasharray: 12 18; }
+      .port { fill: #0b1728; stroke: #67e7ff; stroke-width: 5; }
+      .pulse { fill: #67e7ff; filter: drop-shadow(0 0 12px #1f6bff); }
+      .module { fill: rgba(10,29,57,.88); stroke: #2fcfff; stroke-width: 4; rx: 18; }
+      .module-label { fill: #f4f7ff; font-family: "JetBrains Mono", monospace; font-size: 25px; font-weight: 700; letter-spacing: 2px; text-anchor: middle; }
+      .module-sub { fill: #91dfff; font-family: "JetBrains Mono", monospace; font-size: 17px; text-anchor: middle; }
+      .metric { position: absolute; width: 230px; height: 128px; border: 2px solid rgba(69,183,255,.75); border-radius: 18px; background: rgba(7,20,43,.72); padding: 20px; font: 600 22px "JetBrains Mono", monospace; color: #bce8ff; }
+      .metric b { display: block; font: 800 48px "Space Grotesk", sans-serif; color: #fff; }
+      .cta { position: absolute; left: 86px; right: 86px; bottom: 185px; border: 3px solid #25cfff; border-radius: 34px; padding: 38px; font: 800 39px/1.05 "Space Grotesk", sans-serif; text-align: center; color: #fff; box-shadow: 0 0 50px rgba(31,107,255,.4); }
+      .official-logo { position: absolute; top: 230px; left: 453px; width: 175px; height: 175px; object-fit: cover; object-position: center; border-radius: 28px; box-shadow: 0 0 48px rgba(31,107,255,.42); }
+      .brand-banner { position: absolute; z-index: 20; top: 72px; left: 76px; width: 390px; height: 104px; object-fit: contain; filter: drop-shadow(0 12px 25px rgba(0,0,0,.5)); }
+    </style>
+  </head>
+  <body>
+    <div id="ig-root" data-composition-id="dblock-instagram-explainer" data-start="0" data-duration="26" data-width="1080" data-height="1920">
+      <section id="scene-hook" class="clip scene" data-start="0" data-duration="4" data-track-index="1"><div class="grid"></div><div id="glow-hook" class="glow" style="left:350px;top:760px"></div><div class="brand">DBLOCK</div><div class="eyebrow">TECNOLOGÍA EN MOVIMIENTO</div><h1 id="hook-title" class="headline" style="top:440px">LOS NEGOCIOS<br><span class="accent">CRECEN.</span></h1><p id="hook-sub" class="support" style="top:760px">Sus procesos también deberían hacerlo.</p><div id="hook-circuit" class="circuit"><svg viewBox="0 0 936 600"><path class="route" d="M165 285H305V145H500V285H745"/><path class="route" d="M745 285V460H500V375H305V460H165V285"/><rect class="module" x="45" y="230" width="120" height="110"/><text class="module-label" x="105" y="278">ENTRADA</text><text class="module-sub" x="105" y="310">DATOS</text><rect class="module" x="305" y="90" width="195" height="110"/><text class="module-label" x="402" y="138">PROCESO</text><text class="module-sub" x="402" y="170">SISTEMA</text><rect class="module" x="745" y="230" width="145" height="110"/><text class="module-label" x="817" y="278">SALIDA</text><text class="module-sub" x="817" y="310">VALOR</text><circle class="port" cx="165" cy="285" r="13"/><circle class="port" cx="305" cy="145" r="13"/><circle class="port" cx="500" cy="285" r="13"/><circle class="port" cx="745" cy="285" r="13"/><circle id="hook-pulse" class="pulse" cx="165" cy="285" r="12"/></svg></div></section>
+      <section id="scene-pain" class="clip scene" data-start="4" data-duration="5" data-track-index="1"><div class="grid"></div><div id="glow-pain" class="glow" style="left:-170px;top:890px"></div><div class="brand">DBLOCK</div><div class="eyebrow">CUANDO TODO SE COMPLICA</div><h2 id="pain-title" class="headline" style="top:425px">TAREAS.<br>PLANILLAS.<br><span class="accent">DESCONEXIÓN.</span></h2><p id="pain-sub" class="support" style="top:850px">Herramientas aisladas hacen más difícil crecer.</p><div id="pain-circuit" class="circuit"><svg viewBox="0 0 936 600"><path class="route dim" d="M150 230H340V360H525"/><path class="route dim" d="M150 440H340V360"/><path class="route dim" d="M615 360H790"/><rect class="module" x="30" y="175" width="120" height="110"/><rect class="module" x="30" y="385" width="120" height="110"/><rect class="module" x="790" y="305" width="120" height="110"/><text class="module-label" x="90" y="242">WEB</text><text class="module-label" x="90" y="452">CRM</text><text class="module-label" x="850" y="372">EQUIPO</text><circle class="port" cx="340" cy="360" r="15"/><circle class="port" cx="525" cy="360" r="15"/><circle class="port" cx="615" cy="360" r="15"/><circle id="pain-pulse" class="pulse" cx="340" cy="360" r="12"/></svg></div></section>
+      <section id="scene-solution" class="clip scene" data-start="9" data-duration="6" data-track-index="1"><div class="grid"></div><div id="glow-solution" class="glow" style="left:360px;top:800px"></div><div class="brand">DBLOCK</div><div class="eyebrow">LA RESPUESTA</div><h2 id="solution-title" class="headline" style="top:360px">ORDENAR.<br><span class="accent">AUTOMATIZAR.</span><br>CONECTAR.</h2><p id="solution-sub" class="support" style="top:770px">Soluciones tecnológicas para problemas reales.</p><div id="solution-circuit" class="circuit"><svg viewBox="0 0 936 600"><path class="route" d="M165 305H310M485 305H610M785 305H900"/><rect class="module" x="25" y="245" width="140" height="120"/><rect class="module" x="310" y="245" width="175" height="120"/><rect class="module" x="610" y="245" width="175" height="120"/><text class="module-label" x="95" y="292">ENTRADA</text><text class="module-sub" x="95" y="327">FORMULARIO</text><text class="module-label" x="397" y="292">REGLA</text><text class="module-sub" x="397" y="327">VALIDAR</text><text class="module-label" x="697" y="292">ACCIÓN</text><text class="module-sub" x="697" y="327">ASIGNAR</text><path class="route" d="M875 305V140H485V245"/><circle class="port" cx="165" cy="305" r="13"/><circle class="port" cx="310" cy="305" r="13"/><circle class="port" cx="485" cy="305" r="13"/><circle class="port" cx="610" cy="305" r="13"/><circle class="port" cx="785" cy="305" r="13"/><circle id="solution-pulse" class="pulse" cx="165" cy="305" r="12"/></svg></div></section>
+      <section id="scene-value" class="clip scene" data-start="15" data-duration="6" data-track-index="1"><div class="grid"></div><div id="glow-value" class="glow" style="left:-80px;top:940px"></div><div class="brand">DBLOCK</div><div class="eyebrow">EL RESULTADO</div><h2 id="value-title" class="headline" style="top:410px">MENOS<br>MANUAL.<br><span class="accent">MÁS CLARO.</span></h2><p id="value-sub" class="support" style="top:830px">Más orden. Mejores decisiones.</p><div id="metrics"><div class="metric" style="left:92px;top:1190px"><b>01</b>ORDEN</div><div class="metric" style="left:376px;top:1330px"><b>02</b>FLUJO</div><div class="metric" style="left:665px;top:1190px"><b>03</b>DECISIÓN</div></div></section>
+      <section id="scene-cta" class="clip scene" data-start="21" data-duration="5" data-track-index="1"><div class="grid"></div><div id="glow-cta" class="glow" style="left:190px;top:500px"></div><img id="official-logo" class="official-logo" src=".media/images/logo_001.png" alt="Logo oficial Dblock" /><h2 id="cta-title" class="headline" style="top:480px;text-align:center;left:70px;right:70px">TECNOLOGÍA<br>PARA CRECER.</h2></section>
+      <img id="brand-banner" class="brand-banner" src=".media/images/image_001.png" alt="Dblock" />
+      <audio id="voiceover" class="clip" data-start="0" data-duration="21" data-track-index="2" src="assets/audio/dblock-explainer-voice.m4a"></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      document.querySelectorAll("#hook-circuit .route, #pain-circuit .route, #solution-circuit .route").forEach((path) => {
+        const len = path.getTotalLength();
+        path.style.strokeDasharray = String(len);
+        path.style.strokeDashoffset = String(len);
+      });
+
+      tl.fromTo("#hook-title", { y: 105, opacity: 0 }, { y: 0, opacity: 1, duration: .72, ease: "expo.out" }, .2)
+        .fromTo("#hook-sub", { x: -24, opacity: 0 }, { x: 0, opacity: 1, duration: .5, ease: "power2.out" }, .78)
+        .to("#hook-circuit .route", { strokeDashoffset: 0, duration: .62, stagger: .18, ease: "power2.out" }, .62)
+        .fromTo("#hook-circuit .module, #hook-circuit .port", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: .48, stagger: .065, ease: "power3.out" }, .98)
+        .to("#hook-pulse", { attr: { cx: 305, cy: 285 }, duration: .3, ease: "none" }, 1.65).to("#hook-pulse", { attr: { cx: 305, cy: 145 }, duration: .24, ease: "none" }).to("#hook-pulse", { attr: { cx: 500, cy: 145 }, duration: .3, ease: "none" }).to("#hook-pulse", { attr: { cx: 500, cy: 285 }, duration: .24, ease: "none" }).to("#hook-pulse", { attr: { cx: 745, cy: 285 }, duration: .38, ease: "none" })
+        .to("#glow-hook", { scale: 1.18, duration: 2.7, ease: "sine.inOut" }, .35);
+
+      tl.fromTo("#pain-title", { x: -115, opacity: 0 }, { x: 0, opacity: 1, duration: .58, ease: "power4.out" }, 4.12)
+        .fromTo("#pain-sub", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: .42, ease: "power2.out" }, 4.72)
+        .to("#pain-circuit .route", { strokeDashoffset: 0, duration: .52, stagger: .1, ease: "power2.out" }, 4.66)
+        .fromTo("#pain-circuit .module, #pain-circuit .port", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: .4, stagger: .06, ease: "power3.out" }, 4.95)
+        .to("#pain-pulse", { attr: { cx: 525, cy: 360 }, duration: .55, ease: "none" }, 5.78).to("#pain-pulse", { scale: 1.7, opacity: .12, duration: .32, ease: "power2.out" }, 6.32)
+        .to("#glow-pain", { x: 180, duration: 3.7, ease: "sine.inOut" }, 4.2);
+
+      tl.fromTo("#solution-title", { y: 105, opacity: 0 }, { y: 0, opacity: 1, duration: .68, ease: "expo.out" }, 9.12)
+        .fromTo("#solution-sub", { x: -26, opacity: 0 }, { x: 0, opacity: 1, duration: .46, ease: "power2.out" }, 9.72)
+        .to("#solution-circuit .route", { strokeDashoffset: 0, duration: .48, stagger: .14, ease: "power2.out" }, 9.62)
+        .fromTo("#solution-circuit .module, #solution-circuit .port", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: .44, stagger: .07, ease: "power3.out" }, 10.08)
+        .to("#solution-pulse", { attr: { cx: 310, cy: 305 }, duration: .27, ease: "none" }, 11.02).to("#solution-pulse", { attr: { cx: 485, cy: 305 }, duration: .28, ease: "none" }).to("#solution-pulse", { attr: { cx: 610, cy: 305 }, duration: .25, ease: "none" }).to("#solution-pulse", { attr: { cx: 785, cy: 305 }, duration: .28, ease: "none" }).to("#solution-pulse", { attr: { cx: 875, cy: 305 }, duration: .18, ease: "none" }).to("#solution-pulse", { attr: { cx: 875, cy: 140 }, duration: .24, ease: "none" }).to("#solution-pulse", { attr: { cx: 485, cy: 140 }, duration: .42, ease: "none" }).to("#solution-pulse", { attr: { cx: 485, cy: 245 }, duration: .2, ease: "none" })
+        .to("#glow-solution", { scale: 1.24, duration: 4.6, ease: "sine.inOut" }, 9.22);
+
+      tl.fromTo("#value-title", { x: -90, opacity: 0 }, { x: 0, opacity: 1, duration: .62, ease: "power4.out" }, 15.12)
+        .fromTo("#value-sub", { y: 28, opacity: 0 }, { y: 0, opacity: 1, duration: .44, ease: "power2.out" }, 15.7)
+        .fromTo("#metrics .metric", { y: 86, opacity: 0, scale: .82 }, { y: 0, opacity: 1, scale: 1, duration: .52, stagger: .1, ease: "power3.out" }, 16.04)
+        .to("#metrics .metric b", { scale: 1.08, duration: .3, yoyo: true, repeat: 1, stagger: .1, ease: "sine.inOut" }, 16.72)
+        .to("#glow-value", { x: 170, duration: 4.4, ease: "sine.inOut" }, 15.1);
+
+      tl.fromTo("#official-logo", { scale: .55, opacity: 0 }, { scale: 1, opacity: 1, duration: .6, ease: "power3.out" }, 21.12)
+        .fromTo("#cta-title", { y: 72, opacity: 0 }, { y: 0, opacity: 1, duration: .58, ease: "expo.out" }, 21.56)
+        .to("#official-logo", { scale: .95, duration: .35, ease: "power2.in" }, 24.6).to("#official-logo", { scale: 1, duration: .48, ease: "power3.out" }, 24.95)
+        .to("#glow-cta", { scale: 1.22, duration: 4.5, ease: "sine.inOut" }, 21.1);
+      window.__timelines["dblock-instagram-explainer"] = tl;
+    </script>
+  </body>
+</html>
