@@ -1,9 +1,10 @@
 .home-navbar {
-  width: calc(100% - 32px);
   position: fixed;
-  top: 16px;
+  top: calc(16px + env(safe-area-inset-top, 0px));
   left: 16px;
+  right: 16px;
   z-index: 1000;
+  box-sizing: border-box;
 
   min-height: 64px;
   padding: 0 24px;
@@ -116,33 +117,17 @@
   cursor: pointer;
   position: relative;
   z-index: 1002;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 }
 
-.home-navbar-toggle-line {
-  display: block;
-  width: 20px;
-  height: 2px;
-  margin: 5px auto;
-
-  background: var(--home-text);
-  border-radius: 999px;
-
-  transition:
-    transform 0.25s ease,
-    opacity 0.25s ease;
-}
-
-/* Animación de hamburguesa a X */
-.home-navbar-toggle.is-open .home-navbar-toggle-line:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-
-.home-navbar-toggle.is-open .home-navbar-toggle-line:nth-child(2) {
-  opacity: 0;
-}
-
-.home-navbar-toggle.is-open .home-navbar-toggle-line:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+.home-navbar-toggle-icon {
+  color: #ffffff;
+  font-family: "Material Symbols Outlined";
+  font-size: 25px;
+  font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 24;
+  line-height: 1;
 }
 
 /* Responsive */
@@ -168,9 +153,9 @@
 /* Mobile */
 @media (max-width: 900px) {
   .home-navbar {
-    width: calc(100% - 24px);
-    top: 12px;
+    top: calc(12px + env(safe-area-inset-top, 0px));
     left: 12px;
+    right: 12px;
 
     min-height: 64px;
     padding: 0 16px;
@@ -186,7 +171,7 @@
   }
 
   .home-navbar-toggle {
-    display: block;
+    display: flex;
   }
 
   .home-navbar-menu {
@@ -201,6 +186,9 @@
     gap: 18px;
 
     padding: 20px;
+    max-height: calc(100dvh - 104px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
 
     background: rgba(13, 18, 28, 0.96);
     border: 1px solid rgba(179, 197, 255, 0.16);
@@ -245,6 +233,13 @@
     letter-spacing: 0.04em;
   }
 
+  .home-navbar-links a:focus-visible,
+  .home-navbar-button:focus-visible,
+  .home-navbar-toggle:focus-visible {
+    outline: 2px solid #c8ed49;
+    outline-offset: 3px;
+  }
+
   .home-navbar-links a:hover {
     color: #ffffff;
     background: rgba(255, 255, 255, 0.07);
@@ -262,9 +257,9 @@
 /* Mobile chico */
 @media (max-width: 480px) {
   .home-navbar {
-    width: calc(100% - 20px);
-    top: 10px;
+    top: calc(10px + env(safe-area-inset-top, 0px));
     left: 10px;
+    right: 10px;
 
     padding: 0 12px;
     border-radius: 16px;

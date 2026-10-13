@@ -168,7 +168,7 @@ const Solutions = () => {
      btnSecondary={ { text: "Solicitar consulta", href: "/contacto" } }
      description={"En Dblock ayudamos a empresas a mejorar su presencia online, ordenar sus procesos digitales y construir soluciones tecnológicas estables, escalables y orientadas a generar más consultas."} 
      title={"Desarrollo web, cloud y automatización para empresas"}
-     span={"Soluciones digitales para empresas"}
+     
      statusCard={`SOLUCIONES DESTACADAS - PROBLEMAS QUE RESOLVEMOS - TECNOLOGÍAS Y PROCESO DE TRABAJO`}
      heroVideo={{ src: "/assets/videos/solutions-hero.mp4", poster: "/assets/images/cloud-infrastructure.jpg" }}
      />

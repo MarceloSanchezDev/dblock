@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import contactHandler from './api/contact.js'
 
 const MAX_CONTACT_BODY_SIZE = 64 * 1024
 
@@ -9,6 +8,11 @@ function contactApiPlugin() {
     name: 'contact-api',
     configureServer(server) {
       server.middlewares.use('/api/contact', async (request, response, next) => {
+        // Resend is loaded only when the contact endpoint receives a request.
+        // Keeping it out of Vite's startup path makes the dev server faster and
+        // prevents mail-provider dependencies from breaking the local preview.
+        const { default: contactHandler } = await import('./api/contact.js')
+
         if (request.method !== 'POST') {
           return contactHandler(request, createResponse(response))
         }
@@ -71,5 +75,16 @@ async function readJsonBody(request) {
 
 // https://vite.dev/config/
 export default defineConfig({
+  css: {
+    transformer: 'lightningcss',
+  },
+  server: {
+    strictPort: true,
+    watch: {
+      // HyperFrames generates previews in this repository. They are not part of
+      // the Dblock app and must not trigger Vite reloads for this site.
+      ignored: ['**/hyperframes-heroes/**'],
+    },
+  },
   plugins: [react(), contactApiPlugin()],
 })

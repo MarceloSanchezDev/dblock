@@ -1,4 +1,25 @@
 
 body{
   margin: 0;
+  overflow-x: hidden;
+}
+
+:root {
+  --db-bg: #0b0d10;
+  --db-panel: #11151a;
+  --db-line: rgba(210, 222, 235, .15);
+  --db-text: #f2f5f8;
+  --db-muted: #aeb9c6;
+  --db-blue: #4e8cff;
+  --db-green: #79e59a;
+  --db-container: 1240px;
+}
+
+.route-loading {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  background: #0d1014;
+  color: #ffffff;
+  font-family: "Space Grotesk", sans-serif;
 }

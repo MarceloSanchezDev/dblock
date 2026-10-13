@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { trackEvent } from "../../lib/analytics";
 import "./nav.css";
 
 const navLinks = [
   {
-    path: "/soluciones",
+    path: "/software-a-medida",
     label: "Software a medida",
   },
   {
@@ -13,11 +13,11 @@ const navLinks = [
     label: "Desarrollo web",
   },
   {
-    path: "/servicios-cloud",
+    path: "/infraestructura-y-soporte",
     label: "Infraestructura",
   },
   {
-    path: "/servicios-automatizacion",
+    path: "/automatizacion-de-procesos",
     label: "Automatización",
   },
   {
@@ -32,6 +32,8 @@ const navLinks = [
 
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navRef = useRef(null);
+  const { pathname } = useLocation();
 
   const handleToggleMenu = () => {
     setIsMenuOpen((currentValue) => !currentValue);
@@ -41,8 +43,30 @@ const Nav = () => {
     setIsMenuOpen(false);
   };
 
+  useEffect(() => {
+    handleCloseMenu();
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!isMenuOpen) return undefined;
+
+    const handlePointerDown = (event) => {
+      if (!navRef.current?.contains(event.target)) handleCloseMenu();
+    };
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") handleCloseMenu();
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isMenuOpen]);
+
   return (
-    <nav className="home-navbar" aria-label="Navegación principal">
+    <nav ref={navRef} className="home-navbar" aria-label="Navegación principal">
       <Link
         to="/"
         className="home-logo"
@@ -61,9 +85,9 @@ const Nav = () => {
         aria-controls="home-navbar-menu"
         onClick={handleToggleMenu}
       >
-        <span className="home-navbar-toggle-line" />
-        <span className="home-navbar-toggle-line" />
-        <span className="home-navbar-toggle-line" />
+        <span className="material-symbols-outlined home-navbar-toggle-icon" aria-hidden="true">
+          {isMenuOpen ? "close" : "menu"}
+        </span>
       </button>
 
       <div
@@ -72,7 +96,7 @@ const Nav = () => {
       >
         <div className="home-navbar-links">
           {navLinks.map((link) => (
-            <Link key={link.path} to={link.path} onClick={() => {
+            <Link key={link.label} to={link.path} onClick={() => {
               trackEvent("navigation_click", { navigation_label: link.label });
               handleCloseMenu();
             }}>
@@ -89,7 +113,7 @@ const Nav = () => {
             handleCloseMenu();
           }}
         >
-          Hablemos
+          Contactanos
         </Link>
       </div>
     </nav>

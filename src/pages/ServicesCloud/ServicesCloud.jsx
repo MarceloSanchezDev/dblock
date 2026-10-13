@@ -32,7 +32,7 @@ const ServiciosCloud = () => {
          btnSecondary={ { text: "Ver soluciones cloud", href: "#solutions" } }
          description={"Configuramos, optimizamos y mantenemos infraestructura digital paraempresas: hosting, servidores, despliegues, entornos cloud,seguridad técnica y soporte para aplicaciones web."} 
          title={"Servicios cloud, infraestructura web<"}
-         span={"Infraestructura digital para empresas"}
+         
          statusCard={`INFRAESTRUCTURA DIGITAL PARA EMPRESAS`}
          heroVideo={{ src: "/assets/videos/cloud-hero.mp4", poster: "/assets/images/server-room.jpg" }}
          />

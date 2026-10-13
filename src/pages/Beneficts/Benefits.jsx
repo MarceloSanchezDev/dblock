@@ -115,10 +115,7 @@ const Benefits = () => {
           poster="/assets/images/digital-network.jpg"
         />
         <div className="benefits-hero-content">
-          <div className="benefits-status">
-            <span className="material-symbols-outlined">terminal</span>
-            <p>Beneficios para empresas</p>
-          </div>
+          
 
           <h1>Beneficios de trabajar con Dblock</h1>
 

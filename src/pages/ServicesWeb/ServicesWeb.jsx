@@ -70,19 +70,19 @@ const ServiciosWeb = () => {
          btnSecondary={ { text: "Solicitar consulta", href: "/contacto" } }
          description={"Creamos páginas web, landing pages, ecommerce y aplicaciones webpara empresas que quieren mejorar su presencia online, explicarmejor sus servicios y conseguir más consultas."} 
          title={"Desarrollo web para empresas"}
-         span={"Servicios web para empresas"}
+         
          statusCard={`DESARROLLO WEB - SEO TÉCNICO - APLICACIONES WEB A MEDIDA - TECNOLOGÍAS Y PROCESO DE TRABAJO`}
          heroVideo={{ src: "/assets/videos/web-hero.mp4", poster: "/assets/images/cloud-infrastructure.jpg" }}
          />
 
       <section
-        id="documentation"
+        id="capabilities"
         className="servicios-web-section servicios-web-capabilities"
       >
         <div className="servicios-web-container">
           <div className="servicios-web-section-header">
             <div>
-              <span>01 // Servicios web</span>
+              
               <h2>Páginas web y aplicaciones orientadas a consultas</h2>
             </div>
 
@@ -136,7 +136,7 @@ const ServiciosWeb = () => {
         <div className="servicios-web-container">
           <div className="servicios-web-section-header">
             <div>
-              <span>02 // Soluciones</span>
+              
               <h2>Qué podemos desarrollar para tu empresa</h2>
             </div>
 
@@ -167,30 +167,6 @@ const ServiciosWeb = () => {
         </div>
       </section>
 
-      <section className="servicios-web-section servicios-web-stack">
-        <div className="servicios-web-container">
-          <div className="servicios-web-section-header">
-            <div>
-              <span>03 // Tecnología</span>
-              <h2>Tecnologías para sitios rápidos y escalables</h2>
-            </div>
-
-            <p>
-              Usamos herramientas modernas para crear soluciones mantenibles,
-              seguras y preparadas para crecer junto con tu negocio.
-            </p>
-          </div>
-
-          <div className="servicios-web-stack-grid">
-            {techStack.map((tech) => (
-              <article key={tech.name}>
-                <span className="material-symbols-outlined">{tech.icon}</span>
-                <p>{tech.name}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section id="contact" className="servicios-web-cta">
         <div className="servicios-web-container">

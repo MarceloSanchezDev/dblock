@@ -72,7 +72,7 @@ const ServiciosAutomation = () => {
      btnSecondary={ { text: "Solicitar consulta", href: "/contacto" } }
      description={"Ayudamos a empresas a ordenar tareas repetitivas, conectar herramientas, digitalizar procesos y crear sistemas que ahorran tiempo, reducen errores y mejoran la operación diaria."} 
      title={"Automatización de procesos digitales"}
-     span={"Automatización para empresas"}
+    
      statusCard={``}
      heroVideo={{ src: "/assets/videos/automation-hero.mp4", poster: "/assets/images/automation-hardware.jpg" }}
      />

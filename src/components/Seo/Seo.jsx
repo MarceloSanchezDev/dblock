@@ -11,7 +11,7 @@ const pageMetadata = {
       "Dblock desarrolla software a medida, automatizaciones, aplicaciones y soluciones digitales para empresas en Argentina.",
   },
   "/soluciones": {
-    title: "Soluciones Digitales para Empresas | Dblock",
+    title: "Software y Soluciones Digitales para Empresas | Dblock",
     description:
       "Soluciones de desarrollo web, cloud y automatización para mejorar la presencia online y los procesos de tu empresa.",
   },
@@ -45,6 +45,39 @@ const pageMetadata = {
     description:
       "Contanos qué necesita tu empresa. Te ayudamos con desarrollo web, SEO, aplicaciones, infraestructura y automatización.",
   },
+  "/software-a-medida": {
+    title: "Desarrollo de Software a Medida en Argentina | Dblock",
+    description: "Desarrollamos sistemas de gestión, CRM, ERP, portales y dashboards a medida para empresas argentinas.",
+  },
+  "/automatizacion-de-procesos": {
+    title: "Automatización de Procesos para Empresas | Dblock",
+    description: "Automatizamos tareas, conectamos sistemas y reducimos trabajo manual en empresas de Argentina.",
+  },
+  "/aplicaciones-web": {
+    title: "Desarrollo de Aplicaciones Web para Empresas | Dblock",
+    description: "Creamos aplicaciones web, paneles, portales de clientes y dashboards adaptados a tu operación.",
+  },
+  "/aplicaciones-moviles": {
+    title: "Desarrollo de Aplicaciones Móviles para Empresas | Dblock",
+    description: "Desarrollamos apps móviles para clientes, vendedores y equipos conectadas a la operación de tu empresa.",
+  },
+  "/seo-para-empresas": {
+    title: "SEO para Empresas: Más Visibilidad y Consultas | Dblock",
+    description: "Mejoramos SEO técnico, contenido, performance y conversión para atraer consultas comerciales relevantes.",
+  },
+  "/infraestructura-y-soporte": {
+    title: "Infraestructura Cloud y Soporte de Sistemas | Dblock",
+    description: "Cloud, deploys, backups, monitoreo y soporte para que tus sistemas sigan operando y evolucionando.",
+  },
+  "/industrias": {
+    title: "Software por Industria para Empresas | Dblock",
+    description: "Soluciones de software y automatización para distribuidoras, logística, inmobiliarias, clubes y talleres.",
+  },
+  "/industrias/distribuidoras": { title: "Software para Distribuidoras | Dblock", description: "Software a medida para pedidos, stock, precios, reparto y clientes de distribuidoras." },
+  "/industrias/logistica": { title: "Software para Logística | Dblock", description: "Sistemas para organizar flotas, remitos, entregas, documentación y consultas de clientes." },
+  "/industrias/inmobiliarias": { title: "Software para Inmobiliarias | Dblock", description: "CRM, propiedades, consultas y documentación en una solución adaptada a inmobiliarias." },
+  "/industrias/clubes": { title: "Software para Clubes | Dblock", description: "Sistemas para socios, cuotas, reservas, actividades y comunicación de clubes." },
+  "/industrias/talleres": { title: "Software para Talleres | Dblock", description: "Órdenes de trabajo, vehículos, presupuestos e historial de clientes para talleres." },
 };
 
 function setMeta(selector, attribute, value) {

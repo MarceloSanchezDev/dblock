@@ -169,10 +169,7 @@ const Contact = () => {
               poster="/assets/images/digital-network.jpg"
             />
             <div className="contact-hero-content">
-              <div className="contact-status">
-                <span></span>
-                <p>Consultas abiertas para empresas</p>
-              </div>
+              
 
               <h1>Contactá a Dblock</h1>
 

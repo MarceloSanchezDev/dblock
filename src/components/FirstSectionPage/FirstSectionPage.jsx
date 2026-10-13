@@ -8,10 +8,7 @@ export default function FirstSectionPage({span,title,description,btnPrimary,btnS
         <div className="home-grid-bg"></div>
 
         <div className="home-container home-hero-content">
-          <span className="home-eyebrow">
-            {span}
-          </span>
-
+          
           <h1>
             {title}
           </h1>

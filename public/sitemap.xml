@@ -4,57 +4,69 @@
 >
   <url>
     <loc>https://dblock.com.ar/</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://dblock.com.ar/servicios-web</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://dblock.com.ar/servicios-cloud</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://dblock.com.ar/servicios-automatizacion</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://dblock.com.ar/soluciones</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://dblock.com.ar/beneficios</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://dblock.com.ar/acerca-de-nosotros</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://dblock.com.ar/contacto</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url><loc>https://dblock.com.ar/software-a-medida</loc><lastmod>2026-10-10</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://dblock.com.ar/automatizacion-de-procesos</loc><lastmod>2026-10-10</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://dblock.com.ar/aplicaciones-web</loc><lastmod>2026-10-10</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://dblock.com.ar/aplicaciones-moviles</loc><lastmod>2026-10-10</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://dblock.com.ar/seo-para-empresas</loc><lastmod>2026-10-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dblock.com.ar/infraestructura-y-soporte</loc><lastmod>2026-10-10</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://dblock.com.ar/industrias</loc><lastmod>2026-10-10</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://dblock.com.ar/industrias/distribuidoras</loc><lastmod>2026-10-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dblock.com.ar/industrias/logistica</loc><lastmod>2026-10-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dblock.com.ar/industrias/inmobiliarias</loc><lastmod>2026-10-10</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://dblock.com.ar/industrias/clubes</loc><lastmod>2026-10-10</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://dblock.com.ar/industrias/talleres</loc><lastmod>2026-10-10</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
 </urlset>

@@ -1,28 +1,34 @@
+import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import Home from "./pages/Home/Home";
 import Nav from "./components/Nav/Nav";
 import Footer from "./components/Footer/Footer";
 import Seo from "./components/Seo/Seo";
 import Analytics from "./components/Analytics/Analytics";
+import StructuredData from "./components/StructuredData/StructuredData";
 
-import ServiciosWeb from "./pages/ServicesWeb/ServicesWeb";
-import ServiciosCloud from "./pages/ServicesCloud/ServicesCloud";
-import ServiciosAutomation from "./pages/ServiciesAutomation/ServiceAutomation";
-
-import Approach from "./pages/Approach/Approach";
-import Benefits from "./pages/Beneficts/Benefits";
-import Contact from "./pages/Contact/Contact";
-import Solutions from "./pages/Solutions/Solutions";
+const Home = lazy(() => import("./pages/Home/Home"));
+const ServiciosWeb = lazy(() => import("./pages/ServicesWeb/ServicesWeb"));
+const ServiciosCloud = lazy(() => import("./pages/ServicesCloud/ServicesCloud"));
+const ServiciosAutomation = lazy(() => import("./pages/ServiciesAutomation/ServiceAutomation"));
+const Approach = lazy(() => import("./pages/Approach/Approach"));
+const Benefits = lazy(() => import("./pages/Beneficts/Benefits"));
+const Contact = lazy(() => import("./pages/Contact/Contact"));
+const Solutions = lazy(() => import("./pages/Solutions/Solutions"));
+const ServiceDetail = lazy(() => import("./pages/ServiceDetail/ServiceDetail"));
+const IndustriesIndex = lazy(() => import("./pages/Industries/Industries").then((module) => ({ default: module.IndustriesIndex })));
+const IndustryDetail = lazy(() => import("./pages/Industries/Industries").then((module) => ({ default: module.IndustryDetail })));
 
 function App() {
   return (
     <div className="home-page">
       <Seo />
+      <StructuredData />
       <Analytics />
       <Nav />
 
+      <Suspense fallback={<main className="route-loading" aria-live="polite">Cargando…</main>}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/servicios-web" element={<ServiciosWeb />} />
@@ -35,7 +41,13 @@ function App() {
         <Route path="/beneficios" element={<Benefits />} />
         <Route path="/contacto" element={<Contact />} />
         <Route path="/soluciones" element={<Solutions />} />
+        <Route path="/software-a-medida" element={<ServiceDetail />} />
+        <Route path="/automatizacion-de-procesos" element={<ServiceDetail />} />
+        <Route path="/infraestructura-y-soporte" element={<ServiceDetail />} />
+        <Route path="/industrias" element={<IndustriesIndex />} />
+        <Route path="/industrias/:industry" element={<IndustryDetail />} />
       </Routes>
+      </Suspense>
 
       <Footer />
     </div>

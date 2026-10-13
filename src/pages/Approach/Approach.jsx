@@ -80,7 +80,7 @@ const Approach = () => {
      btnSecondary={ { text: "Ver enfoque", href: "#ecosystem" } }
      description={"En Dblock trabajamos con un proceso claro para crear páginas web, SEO, aplicaciones web, aplicaciones móviles e infraestructura digital para empresas que necesitan resultados reales."} 
      title={" Metodología de trabajo digital"}
-     span={"Proceso de trabajo profesional"}
+     
      statusCard={`SISTEMAS A MEDIDA`}
      heroVideo={{ src: "/assets/videos/approach-hero.mp4", poster: "/assets/images/cybersecurity.jpg" }}
      />
