@@ -42,7 +42,6 @@ function App() {
         <Route path="/contacto" element={<Contact />} />
         <Route path="/soluciones" element={<Solutions />} />
         <Route path="/software-a-medida" element={<ServiceDetail />} />
-        <Route path="/automatizacion-de-procesos" element={<ServiceDetail />} />
         <Route path="/infraestructura-y-soporte" element={<ServiceDetail />} />
         <Route path="/industrias" element={<IndustriesIndex />} />
         <Route path="/industrias/:industry" element={<IndustryDetail />} />

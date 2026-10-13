@@ -16,10 +16,7 @@ const navLinks = [
     path: "/infraestructura-y-soporte",
     label: "Infraestructura",
   },
-  {
-    path: "/automatizacion-de-procesos",
-    label: "Automatización",
-  },
+
   {
     path: "/acerca-de-nosotros",
     label: "Nosotros",

@@ -71,7 +71,7 @@ const ServiciosWeb = () => {
          description={"Creamos páginas web, landing pages, ecommerce y aplicaciones webpara empresas que quieren mejorar su presencia online, explicarmejor sus servicios y conseguir más consultas."} 
          title={"Desarrollo web para empresas"}
          
-         statusCard={`DESARROLLO WEB - SEO TÉCNICO - APLICACIONES WEB A MEDIDA - TECNOLOGÍAS Y PROCESO DE TRABAJO`}
+         
          heroVideo={{ src: "/assets/videos/web-hero.mp4", poster: "/assets/images/cloud-infrastructure.jpg" }}
          />
 
@@ -156,11 +156,7 @@ const ServiciosWeb = () => {
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
 
-                <div className="servicios-web-tags">
-                  {item.tags.map((tag) => (
-                    <span key={tag}>{tag}</span>
-                  ))}
-                </div>
+               
               </article>
             ))}
           </div>
