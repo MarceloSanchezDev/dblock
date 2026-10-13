@@ -19,10 +19,7 @@ export default function ServiceDetail() {
           
             <h1>{service.title}</h1>
             <p className="detail-lead">{service.description}</p>
-            <div className="detail-actions">
-              <Link className="detail-button detail-button-primary" to="/contacto">Contanos qué necesitás <span aria-hidden="true">→</span></Link>
-              <Link className="detail-button detail-button-secondary" to="/industrias">Ver soluciones por industria</Link>
-            </div>
+            
           </div>
         </section>
 
