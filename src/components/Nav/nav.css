@@ -48,6 +48,28 @@
   height: 52px;
   object-fit: contain;
   display: block;
+  pointer-events: none;
+  background: transparent;
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 5px 8px rgba(29, 78, 216, 0.25));
+  animation: navLogoFloat 5.2s ease-in-out infinite;
+  transition: filter 0.25s ease, transform 0.25s ease;
+}
+
+.home-logo:hover .img-logo {
+  animation-play-state: paused;
+  transform: perspective(220px) rotateX(-7deg) rotateY(18deg) translateY(-2px) scale(1.08);
+  filter: drop-shadow(0 8px 12px rgba(29, 78, 216, 0.42));
+}
+
+@keyframes navLogoFloat {
+  0%, 100% { transform: perspective(220px) rotateX(0deg) rotateY(-8deg) translateY(0); }
+  50% { transform: perspective(220px) rotateX(5deg) rotateY(8deg) translateY(-2px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .img-logo { animation: none; }
+  .home-logo:hover .img-logo { transform: none; }
 }
 
 .home-navbar-menu {

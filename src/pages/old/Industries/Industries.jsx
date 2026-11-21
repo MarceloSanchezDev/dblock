@@ -1,0 +1,15 @@
+import { Link, Navigate, useParams } from "react-router-dom";
+import SliceToTopComponent from "../../components/SliceToTopComponent/SliceToTopComponent";
+import { industries } from "../../content/seoContent";
+import "../ServiceDetail/ServiceDetail.css";
+
+export function IndustriesIndex() {
+  return <SliceToTopComponent><main className="detail-page"><section className="detail-hero"><div className="detail-container"><p className="detail-eyebrow">SOLUCIONES POR INDUSTRIA</p><h1>La tecnología tiene que adaptarse a la operación.</h1><p className="detail-lead">Cada empresa tiene reglas, recorridos e información diferente. Empezamos por entenderlos antes de definir una solución.</p></div></section><section className="detail-section"><div className="detail-container"><div className="detail-solutions-grid industries-grid">{Object.entries(industries).map(([slug, industry], index) => <Link className="detail-solution-card industry-card" key={slug} to={`/industrias/${slug}`}><span>{String(index + 1).padStart(2, "0")}</span><h2>{industry.title}</h2><p>{industry.description}</p><b>Ver necesidades habituales →</b></Link>)}</div></div></section></main></SliceToTopComponent>;
+}
+
+export function IndustryDetail() {
+  const { industry: slug } = useParams();
+  const industry = industries[slug];
+  if (!industry) return <Navigate to="/industrias" replace />;
+  return <SliceToTopComponent><main className="detail-page"><section className="detail-hero"><div className="detail-container"><p className="detail-eyebrow">SOLUCIONES PARA EMPRESAS</p><h1>{industry.title}</h1><p className="detail-lead">{industry.description}</p><div className="detail-actions"><Link className="detail-button detail-button-primary" to="/contacto">Consultar por mi empresa <span aria-hidden="true">→</span></Link><Link className="detail-button detail-button-secondary" to="/software-a-medida">Ver software a medida</Link></div></div></section><section className="detail-section"><div className="detail-container detail-two-columns"><div><p className="detail-eyebrow">SITUACIONES HABITUALES</p><h2>El primer paso es ordenar lo que hoy está disperso.</h2></div><ul className="detail-list">{industry.needs.map((need) => <li key={need}>{need}</li>)}</ul></div></section><section className="detail-section detail-section-muted"><div className="detail-container"><div className="detail-heading"><p className="detail-eyebrow">QUÉ SE PUEDE CONSTRUIR</p><h2>Herramientas que acompañan el trabajo diario.</h2></div><div className="detail-solutions-grid">{industry.systems.map((system, index) => <article className="detail-solution-card" key={system}><span>{String(index + 1).padStart(2, "0")}</span><h3>{system}</h3></article>)}</div></div></section><section className="detail-contact-cta"><div className="detail-container"><p className="detail-eyebrow">HABLEMOS DE LA OPERACIÓN</p><h2>Contanos qué proceso querés mejorar y evaluamos una primera etapa posible.</h2><Link className="detail-button detail-button-primary" to="/contacto">Solicitar una consulta <span aria-hidden="true">→</span></Link></div></section></main></SliceToTopComponent>;
+}

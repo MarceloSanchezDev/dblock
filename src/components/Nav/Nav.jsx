@@ -70,7 +70,12 @@ const Nav = () => {
         aria-label="Ir al inicio de Dblock"
         onClick={handleCloseMenu}
       >
-        <img src="/logo.png" alt="Logo de Dblock" className="img-logo" />
+        <img
+          className="img-logo"
+          src="/assets/videos/DBLOCK-Loop-Navbar.webp"
+          alt=""
+          aria-hidden="true"
+        />
         <span>DBLOCK</span>
       </Link>
 

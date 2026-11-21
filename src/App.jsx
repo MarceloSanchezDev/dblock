@@ -9,16 +9,11 @@ import Analytics from "./components/Analytics/Analytics";
 import StructuredData from "./components/StructuredData/StructuredData";
 
 const Home = lazy(() => import("./pages/Home/Home"));
-const ServiciosWeb = lazy(() => import("./pages/ServicesWeb/ServicesWeb"));
-const ServiciosCloud = lazy(() => import("./pages/ServicesCloud/ServicesCloud"));
-const ServiciosAutomation = lazy(() => import("./pages/ServiciesAutomation/ServiceAutomation"));
-const Approach = lazy(() => import("./pages/Approach/Approach"));
-const Benefits = lazy(() => import("./pages/Beneficts/Benefits"));
-const Contact = lazy(() => import("./pages/Contact/Contact"));
-const Solutions = lazy(() => import("./pages/Solutions/Solutions"));
-const ServiceDetail = lazy(() => import("./pages/ServiceDetail/ServiceDetail"));
-const IndustriesIndex = lazy(() => import("./pages/Industries/Industries").then((module) => ({ default: module.IndustriesIndex })));
-const IndustryDetail = lazy(() => import("./pages/Industries/Industries").then((module) => ({ default: module.IndustryDetail })));
+const StandardPage = lazy(() => import("./pages/NewDesign/ModernPage").then((module) => ({ default: module.StandardPage })));
+const ServiceDetail = lazy(() => import("./pages/NewDesign/ModernPage").then((module) => ({ default: module.ServicePage })));
+const IndustriesIndex = lazy(() => import("./pages/NewDesign/ModernPage").then((module) => ({ default: module.IndustriesIndex })));
+const IndustryDetail = lazy(() => import("./pages/NewDesign/ModernPage").then((module) => ({ default: module.IndustryPage })));
+const Contact = lazy(() => import("./pages/NewDesign/ModernContact"));
 
 function App() {
   return (
@@ -31,16 +26,13 @@ function App() {
       <Suspense fallback={<main className="route-loading" aria-live="polite">Cargando…</main>}>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/servicios-web" element={<ServiciosWeb />} />
-        <Route path="/servicios-cloud" element={<ServiciosCloud />} />
-        <Route
-          path="/servicios-automatizacion"
-          element={<ServiciosAutomation />}
-        />
-        <Route path="/acerca-de-nosotros" element={<Approach />} />
-        <Route path="/beneficios" element={<Benefits />} />
+        <Route path="/servicios-web" element={<StandardPage />} />
+        <Route path="/servicios-cloud" element={<StandardPage />} />
+        <Route path="/servicios-automatizacion" element={<StandardPage />} />
+        <Route path="/acerca-de-nosotros" element={<StandardPage />} />
+        <Route path="/beneficios" element={<StandardPage />} />
         <Route path="/contacto" element={<Contact />} />
-        <Route path="/soluciones" element={<Solutions />} />
+        <Route path="/soluciones" element={<StandardPage />} />
         <Route path="/software-a-medida" element={<ServiceDetail />} />
         <Route path="/infraestructura-y-soporte" element={<ServiceDetail />} />
         <Route path="/industrias" element={<IndustriesIndex />} />

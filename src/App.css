@@ -13,6 +13,10 @@ body{
   --db-blue: #4e8cff;
   --db-green: #79e59a;
   --db-container: 1240px;
+  --home-container: 1180px;
+  --home-text: #f2f5f8;
+  --home-muted: #aeb9c6;
+  --home-secondary: #79e59a;
 }
 
 .route-loading {
