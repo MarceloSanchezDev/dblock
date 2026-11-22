@@ -129,12 +129,13 @@
 .home-navbar-toggle {
   display: none;
 
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
 
-  border: 1px solid rgba(179, 197, 255, 0.18);
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 15px;
+  background: #1d4ed8;
+  box-shadow: 0 6px 18px rgba(29, 78, 216, 0.42);
 
   cursor: pointer;
   position: relative;
@@ -147,9 +148,20 @@
 .home-navbar-toggle-icon {
   color: #ffffff;
   font-family: "Material Symbols Outlined";
-  font-size: 25px;
-  font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 24;
+  font-size: 28px;
+  font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 0, "opsz" 24;
   line-height: 1;
+}
+
+.home-navbar-toggle:hover {
+  background: #1640b7;
+  box-shadow: 0 8px 24px rgba(29, 78, 216, 0.56);
+}
+
+.home-navbar-toggle.is-open {
+  background: #343232;
+  border-color: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
 }
 
 /* Responsive */
@@ -194,6 +206,7 @@
 
   .home-navbar-toggle {
     display: flex;
+    flex: 0 0 48px;
   }
 
   .home-navbar-menu {
@@ -212,8 +225,8 @@
     overflow-y: auto;
     overscroll-behavior: contain;
 
-    background: rgba(13, 18, 28, 0.96);
-    border: 1px solid rgba(179, 197, 255, 0.16);
+    background: rgba(17, 21, 30, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
 
@@ -273,6 +286,18 @@
     justify-content: center;
     text-align: center;
     padding: 14px 18px;
+  }
+}
+
+@media (max-width: 900px) {
+  body.apple-home-active .home-navbar-toggle {
+    background: #1d4ed8;
+    border-color: rgba(29, 78, 216, 0.85);
+  }
+
+  body.apple-home-active .home-navbar-toggle.is-open {
+    background: #343232;
+    border-color: #343232;
   }
 }
 
