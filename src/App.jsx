@@ -9,10 +9,10 @@ import Analytics from "./components/Analytics/Analytics";
 import StructuredData from "./components/StructuredData/StructuredData";
 
 const Home = lazy(() => import("./pages/Home/Home"));
-const StandardPage = lazy(() => import("./pages/NewDesign/ModernPage").then((module) => ({ default: module.StandardPage })));
-const ServiceDetail = lazy(() => import("./pages/NewDesign/ModernPage").then((module) => ({ default: module.ServicePage })));
-const IndustriesIndex = lazy(() => import("./pages/NewDesign/ModernPage").then((module) => ({ default: module.IndustriesIndex })));
-const IndustryDetail = lazy(() => import("./pages/NewDesign/ModernPage").then((module) => ({ default: module.IndustryPage })));
+const StandardPage = lazy(() => import("./pages/NewDesign/CommercialPages").then((module) => ({ default: module.CommercialPage })));
+const ServiceDetail = lazy(() => import("./pages/NewDesign/CommercialPages").then((module) => ({ default: module.CommercialServicePage })));
+const IndustriesIndex = lazy(() => import("./pages/NewDesign/CommercialPages").then((module) => ({ default: module.CommercialIndustries })));
+const IndustryDetail = lazy(() => import("./pages/NewDesign/CommercialPages").then((module) => ({ default: module.CommercialIndustryPage })));
 const Contact = lazy(() => import("./pages/NewDesign/ModernContact"));
 
 function App() {
@@ -33,6 +33,8 @@ function App() {
         <Route path="/beneficios" element={<StandardPage />} />
         <Route path="/contacto" element={<Contact />} />
         <Route path="/soluciones" element={<StandardPage />} />
+        <Route path="/sistema-de-pedidos-b2b" element={<StandardPage />} />
+        <Route path="/integracion-de-sistemas-y-apis" element={<StandardPage />} />
         <Route path="/software-a-medida" element={<ServiceDetail />} />
         <Route path="/infraestructura-y-soporte" element={<ServiceDetail />} />
         <Route path="/industrias" element={<IndustriesIndex />} />
