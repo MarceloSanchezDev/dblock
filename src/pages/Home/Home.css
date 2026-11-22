@@ -35,3 +35,27 @@ body.apple-home-active .home-navbar { background: rgba(255,255,255,.78); border-
 .apple-home .apple-signal p { font-size: clamp(1.45rem, 2.8vw, 2.25rem); }
 body.apple-home-active .home-logo { font-family: "Anton", Impact, sans-serif; font-weight: 400; letter-spacing: .04em; }
 body.apple-home-active .home-navbar-links a, body.apple-home-active .home-navbar-button { font-family: "Horizon", "Inter", ui-sans-serif, system-ui, sans-serif; }
+
+@media (max-width: 900px) {
+  /* La home carga después del navbar: este bloque conserva contraste real al abrir el menú. */
+  body.apple-home-active .home-navbar-menu {
+    background: rgba(17, 21, 30, 0.98) !important;
+    border-color: rgba(255, 255, 255, 0.16) !important;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35) !important;
+  }
+
+  body.apple-home-active .home-navbar-links a {
+    color: #ffffff !important;
+  }
+
+  body.apple-home-active .home-navbar-links a:hover,
+  body.apple-home-active .home-navbar-links a:focus-visible {
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  body.apple-home-active .home-navbar-button {
+    background: #ffffff !important;
+    color: #343232 !important;
+  }
+}
