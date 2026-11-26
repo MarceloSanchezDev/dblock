@@ -69,6 +69,14 @@ const pageMetadata = {
     title: "Infraestructura Cloud y Soporte de Sistemas | Dblock",
     description: "Cloud, deploys, backups, monitoreo y soporte para que tus sistemas sigan operando y evolucionando.",
   },
+  "/sistema-de-pedidos-b2b": {
+    title: "Sistema de Pedidos B2B para Empresas | Dblock",
+    description: "Desarrollamos sistemas de pedidos B2B para centralizar clientes, precios, stock y seguimiento comercial.",
+  },
+  "/integracion-de-sistemas-y-apis": {
+    title: "Integración de Sistemas y APIs para Empresas | Dblock",
+    description: "Conectamos sistemas, APIs, formularios y procesos para evitar doble carga de datos y mejorar trazabilidad.",
+  },
   "/industrias": {
     title: "Software por Industria para Empresas | Dblock",
     description: "Soluciones de software y automatización para distribuidoras, logística, inmobiliarias, clubes y talleres.",

@@ -13,7 +13,7 @@ const StandardPage = lazy(() => import("./pages/NewDesign/CommercialPages").then
 const ServiceDetail = lazy(() => import("./pages/NewDesign/CommercialPages").then((module) => ({ default: module.CommercialServicePage })));
 const IndustriesIndex = lazy(() => import("./pages/NewDesign/CommercialPages").then((module) => ({ default: module.CommercialIndustries })));
 const IndustryDetail = lazy(() => import("./pages/NewDesign/CommercialPages").then((module) => ({ default: module.CommercialIndustryPage })));
-const Contact = lazy(() => import("./pages/NewDesign/ModernContact"));
+const Contact = lazy(() => import("./pages/NewDesign/QualifiedContact"));
 
 function App() {
   return (
