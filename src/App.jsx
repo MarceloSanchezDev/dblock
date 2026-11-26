@@ -36,6 +36,10 @@ function App() {
         <Route path="/sistema-de-pedidos-b2b" element={<StandardPage />} />
         <Route path="/integracion-de-sistemas-y-apis" element={<StandardPage />} />
         <Route path="/software-a-medida" element={<ServiceDetail />} />
+        <Route path="/automatizacion-de-procesos" element={<ServiceDetail />} />
+        <Route path="/aplicaciones-web" element={<ServiceDetail />} />
+        <Route path="/aplicaciones-moviles" element={<ServiceDetail />} />
+        <Route path="/seo-para-empresas" element={<ServiceDetail />} />
         <Route path="/infraestructura-y-soporte" element={<ServiceDetail />} />
         <Route path="/industrias" element={<IndustriesIndex />} />
         <Route path="/industrias/:industry" element={<IndustryDetail />} />

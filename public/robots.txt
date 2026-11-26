@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /hyperframes-heroes/
 
 Sitemap: https://dblock.com.ar/sitemap.xml

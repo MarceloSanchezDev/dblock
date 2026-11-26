@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 const siteUrl = "https://dblock.com.ar";
 const socialImage = `${siteUrl}/assets/images/cloud-infrastructure.jpg`;
 
-const pageMetadata = {
+export const pageMetadata = {
   "/": {
     title: "Dblock | Software a Medida y Automatización para Empresas",
     description:
@@ -96,10 +96,17 @@ function setMeta(selector, attribute, value) {
   }
 }
 
+function cleanPathname(pathname) {
+  if (pathname === "/") return "/";
+  return pathname.replace(/\/+$/, "") || "/";
+}
+
 export default function Seo() {
   const { pathname } = useLocation();
-  const metadata = pageMetadata[pathname] || pageMetadata["/"];
-  const canonicalUrl = `${siteUrl}${pathname === "/" ? "" : pathname}`;
+  const cleanPath = cleanPathname(pathname);
+  const isIndexable = Object.hasOwn(pageMetadata, cleanPath);
+  const metadata = pageMetadata[cleanPath] || pageMetadata["/"];
+  const canonicalUrl = `${siteUrl}${cleanPath === "/" ? "" : cleanPath}`;
 
   useEffect(() => {
     document.title = metadata.title;
@@ -111,13 +118,14 @@ export default function Seo() {
     setMeta('meta[name="twitter:title"]', "content", metadata.title);
     setMeta('meta[name="twitter:description"]', "content", metadata.description);
     setMeta('meta[name="twitter:image"]', "content", socialImage);
+    setMeta('meta[name="robots"]', "content", isIndexable ? "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" : "noindex, nofollow");
 
     const canonical = document.head.querySelector('link[rel="canonical"]');
 
     if (canonical) {
       canonical.setAttribute("href", canonicalUrl);
     }
-  }, [canonicalUrl, metadata]);
+  }, [canonicalUrl, isIndexable, metadata]);
 
   return null;
 }

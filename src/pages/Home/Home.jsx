@@ -55,7 +55,6 @@ export default function Home() {
           <div className="apple-orb apple-orb-one" aria-hidden="true" />
           <div className="apple-orb apple-orb-two" aria-hidden="true" />
           <div className="apple-shell apple-hero-content">
-            <p className="apple-kicker">DBLOCK · SOFTWARE PARA EMPRESAS</p>
             <h1 id="inicio-title">Tu negocio no tiene que depender de tu memoria.</h1>
             <p className="apple-hero-copy">Creamos sistemas a medida y automatizaciones para ordenar la información, reducir el caos diario y hacer que tu empresa funcione con más claridad.</p>
             <div className="apple-actions">
@@ -72,32 +71,32 @@ export default function Home() {
 
         <section className="apple-intro apple-section">
           <div className="apple-shell apple-intro-grid">
-            <Reveal><p className="apple-eyebrow">EL PUNTO DE PARTIDA</p><h2>La tecnología sirve cuando resuelve un problema real de la operación.</h2></Reveal>
+            <Reveal><h2>La tecnología sirve cuando resuelve un problema real de la operación.</h2></Reveal>
             <Reveal className="apple-intro-copy"><p>Antes de hablar de herramientas, entendemos qué está frenando a tu equipo: tareas repetidas, datos dispersos, pedidos sin trazabilidad o sistemas que no se comunican.</p><p>Con ese contexto, diseñamos una solución que se adapta a la forma en que tu empresa trabaja.</p></Reveal>
           </div>
         </section>
 
         <section className="apple-section apple-signal-section">
           <div className="apple-shell">
-            <Reveal><p className="apple-eyebrow">SEÑALES CONOCIDAS</p><h2>Cuando la operación crece, improvisar empieza a costar.</h2></Reveal>
+            <Reveal><h2>Cuando la operación crece, improvisar empieza a costar.</h2></Reveal>
             <div className="apple-signals">{signals.map(([number, text]) => <Reveal key={number} className="apple-signal"><span>{number}</span><p>{text}</p><i aria-hidden="true">↗</i></Reveal>)}</div>
           </div>
         </section>
 
         <section className="apple-section apple-services" id="servicios">
-          <div className="apple-shell"><Reveal><p className="apple-eyebrow">CAPACIDADES</p><h2>Una solución para cada parte de tu operación.</h2><p className="apple-section-lead">Podés empezar por un problema concreto y construir desde ahí.</p></Reveal>
+          <div className="apple-shell"><Reveal><h2>Una solución para cada parte de tu operación.</h2><p className="apple-section-lead">Podés empezar por un problema concreto y construir desde ahí.</p></Reveal>
             <div className="apple-service-grid">{services.map(([number, title, text, path]) => <Reveal key={title} className="apple-service-card"><span>{number}</span><h3>{title}</h3><p>{text}</p><Link to={path} onClick={() => trackEvent("service_click", { service_name: title })}>Conocer servicio <b aria-hidden="true">→</b></Link></Reveal>)}</div>
           </div>
         </section>
 
         <section className="apple-section apple-process-section">
-          <div className="apple-shell"><Reveal><p className="apple-eyebrow">CÓMO TRABAJAMOS</p><h2>Un proceso claro, sin promesas vacías.</h2></Reveal>
+          <div className="apple-shell"><Reveal><h2>Un proceso claro, sin promesas vacías.</h2></Reveal>
             <div className="apple-process-grid">{process.map(([number, title, text]) => <Reveal key={number} className="apple-process-step"><span>{number}</span><h3>{title}</h3><p>{text}</p></Reveal>)}</div>
           </div>
         </section>
 
         <section className="apple-final">
-          <Reveal className="apple-shell apple-final-inner"><p className="apple-eyebrow">EMPECEMOS POR EL PROBLEMA</p><h2>¿Hay algo de tu empresa que hoy se podría ordenar mejor?</h2><p>No necesitás tener definida la tecnología. Contanos cómo trabajan hoy y vemos qué camino tiene más sentido.</p><Link className="apple-button apple-button-primary" to="/contacto" onClick={() => contactClick("final")}>Hablemos de tu proyecto <span aria-hidden="true">→</span></Link></Reveal>
+          <Reveal className="apple-shell apple-final-inner"><h2>¿Hay algo de tu empresa que hoy se podría ordenar mejor?</h2><p>No necesitás tener definida la tecnología. Contanos cómo trabajan hoy y vemos qué camino tiene más sentido.</p><Link className="apple-button apple-button-primary" to="/contacto" onClick={() => contactClick("final")}>Hablemos de tu proyecto <span aria-hidden="true">→</span></Link></Reveal>
         </section>
       </main>
     </SliceToTopComponent>
