@@ -8,12 +8,14 @@ const Footer = () => {
     <footer className="home-footer">
       <div className="home-footer-content">
         <div className="home-footer-brand">
-          <p className="home-footer-kicker">SOLUCIONES DIGITALES PARA EMPRESAS</p>
-          <h2>DBLOCK</h2>
-
-          <p>
-            Software, automatización y soluciones digitales para empresas.
-          </p>
+          <Link className="home-footer-mark" to="/" aria-label="Ir al inicio de Dblock">
+            <img
+              src="/assets/videos/DBLOCK-Loop-Navbar.webp"
+              alt=""
+              aria-hidden="true"
+            />
+            <span>DBLOCK</span>
+          </Link>
         </div>
 
         <nav className="home-footer-links" aria-label="Servicios">
